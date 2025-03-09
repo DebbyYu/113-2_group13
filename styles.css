@@ -183,13 +183,26 @@ header {
     display: block;
 }
 
-/* 🌙 主題切換 Switch */
+/* 🌙 深色模式開關樣式 */
 .theme-switch {
     position: fixed;
     top: 15px;
     right: 15px;
     display: flex;
     align-items: center;
+    gap: 8px; /* 增加文字與開關間距 */
+}
+
+/* 🌙 深色模式文字 */
+.theme-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: white; /* 暖色模式時為白色 */
+}
+
+/* 🎨 深色模式下的主題文字 */
+.dark-mode .theme-label {
+    color: #D7BDE2; /* 冷色模式時為淺紫色 */
 }
 
 /* 滑動開關 */
