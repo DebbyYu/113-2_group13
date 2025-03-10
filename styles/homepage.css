@@ -110,3 +110,73 @@ a:hover {
     color: #515151;  /* 當鼠標懸停時，文字顏色變暗 */
     text-decoration: underline;  /* 鼠標懸停時加上下劃線 */
 }
+
+/* 🌙 深色模式開關樣式 */
+.theme-switch {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 增加文字與開關間距 */
+}
+
+/* 🌙 深色模式文字 */
+.theme-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: black; /* 暖色模式時為黑色 */
+}
+
+/* 🎨 深色模式下的主題文字 */
+.dark-mode .theme-label {
+    color: #D7BDE2; /* 冷色模式時為淺紫色 */
+}
+
+/* 滑動開關 */
+.theme-switch input {
+    display: none;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.slider {
+    width: 40px;
+    height: 20px;
+    background: #FF6347; /* 暖色模式 - 番茄色 */
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.slider:before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.theme-switch input:checked + .slider {
+    background: #4A69BD; /* 冷色模式 - 藍紫色 */
+}
+
+.theme-switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* 深色模式 - Switch */
+.dark-mode .slider {
+    background: #4A69BD; /* 冷色系 - 藍紫 */
+}
+
+.dark-mode .slider:before {
+    background: #D7BDE2; 
+}
