@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寵物圖鑑</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 深色模式開關 -->
+    <div class="theme-switch">
+        <label for="theme-toggle" class="theme-label">深色模式</label>
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle" class="slider"></label>
+    </div>
+
+    <!-- 頁首 -->
+    <header>
+        <h1>🐶🐱 寵物圖鑑</h1>
+    </header>
+
+    <!-- 卡片區域 -->
+    <div class="container">
+        <div class="card" data-animal="dog1">
+            <img src="https://imgs.699pic.com/images/600/938/046.jpg!detail.v1" alt="小白">
+            <h2>小白</h2>
+            <p>興趣：跑步</p>
+        </div>
+        <div class="card" data-animal="cat1">
+            <img src="https://cdn.cybassets.com/s/files/26010/ckeditor/pictures/content_aeacea87-af6a-4d93-a0bc-c0d397644bbe.jpg" alt="咪咪">
+            <h2>咪咪</h2>
+            <p>興趣：抓紙球</p>
+        </div>
+        <div class="card" data-animal="dog2">
+            <img src="https://imgs.699pic.com/images/600/713/600.jpg!list1x.v2" alt="大黃">
+            <h2>大黃</h2>
+            <p>興趣：游泳</p>
+        </div>
+        <div class="card" data-animal="cat2">
+            <img src="https://cdn-www.cw.com.tw/article/201810/article-5bd182cf13ebb.jpg" alt="花花">
+            <h2>花花</h2>
+            <p>興趣：曬太陽</p>
+        </div>
+        <div class="card" data-animal="dog3">
+            <img src="https://png.pngtree.com/thumb_back/fh260/background/20210910/pngtree-a-black-dog-watching-the-dog-outdoor-in-the-afternoon-photography-image_838523.jpg" alt="黑黑">
+            <h2>黑黑</h2>
+            <p>興趣：啃骨頭</p>
+        </div>
+        <div class="card" data-animal="cat3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSwghmqnXOm7elulMdNSKYNOAOt3ePpCTVLg&s" alt="奶茶">
+            <h2>奶茶</h2>
+            <p>興趣：跳高</p>
+        </div>
+    </div>
+
+    <script>
+        // 讀取 localStorage 來確保深色模式可沿用
+        function loadTheme() {
+            const darkModeEnabled = localStorage.getItem("darkMode") === "enabled";
+            if (darkModeEnabled) {
+                document.body.classList.add("dark-mode");
+                document.getElementById('theme-toggle').checked = true;
+            }
+        }
+
+        // 切換深色模式
+        document.getElementById('theme-toggle').addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add("dark-mode");
+                localStorage.setItem("darkMode", "enabled"); // 記錄深色模式
+            } else {
+                document.body.classList.remove("dark-mode");
+                localStorage.setItem("darkMode", "disabled"); // 記錄淺色模式
+            }
+        });
+
+        // 頁面載入時應用已儲存的主題設定
+        loadTheme();
+
+        // 點擊卡片時，將對應的動物名稱傳遞到 details.html
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                const animal = this.getAttribute('data-animal');
+                location.href = `details.html?animal=${animal}`;
+            });
+        });
+        
+    </script>
+</body>
+</html>
