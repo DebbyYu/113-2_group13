@@ -1,10 +1,34 @@
+body {
+    background-color: #bbbbbb;
+}
+
 .Topbar {
-    height: 20%;
     border: 1px solid #333;
-    box-shadow: 8px 8px 5px #444;
-    padding: 8px 12px;
+    box-shadow: 1px 8px 5px #444;
+    /* padding: 8px 12px; */
     background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+    display: flex;
   }
+
+.Button {
+    border: 2px solid #00b;
+    padding: 8px 12px;
+    margin: 1px;
+    font-size: 24px;
+    color: #00b;
+    background-color: #ddd;
+    line-height: 1;
+ }
+
+.Button:hover {
+    background-color: #ffffff;
+  }
+  
+.Button:active {
+    box-shadow:
+      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+ }
 
 .Sidebar {
     width: 20%;
@@ -16,7 +40,8 @@
 }
 
 .DataContent {
-    width: 80%;
+    /* width: 60%; */
+    height: 100px;
     display: flex;
     padding: 12px 8px;
     
@@ -24,4 +49,11 @@
 
 .Data {
     padding: 8px 12px;
+    display: flex;
+}
+
+.Image {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
 }
