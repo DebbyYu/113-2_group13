@@ -1,0 +1,111 @@
+/* 固定標題樣式 */
+.dogpedia-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to bottom, #e9b9ff, #bd76ed);
+    color: white;
+    text-align: center;
+    line-height: 0.1;
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* 避免內容被標題遮擋 */
+body {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    background: linear-gradient(to bottom, #b5a8ff5b, #b689f061);
+}
+
+/* 讓卡片以兩欄顯示 */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 80px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 卡片翻轉效果 */
+.card {
+    width: 320px;
+    height: 450px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #d1a3ff;
+}
+
+.card-front img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card-back {
+    background: linear-gradient(to bottom, #c9b6ff, #fefefe);
+    color: black;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-back h2 {
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.card-back .description {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
