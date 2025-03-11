@@ -1,0 +1,263 @@
+/* 載入 Google 字體 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap');
+
+/* 全局樣式 */
+body {
+    font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+    background-color: #FFE4C4; /* 淺色模式 - 暖色系背景 */
+    color: #8B0000; /* 暖色系文字 */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* 深色模式（冷色系） */
+.dark-mode {
+    background-color: #2C3E50; /* 冷色系 - 深藍背景 */
+    color: #D7BDE2; /* 淺紫色文字 */
+}
+
+/* 標題樣式 */
+header {
+    background: #eb654d; /* 淺色模式 - 番茄紅 */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700; /* 加粗 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode header {
+    background: #34495E; /* 冷色系 - 深灰藍 */
+}
+
+/* 讓 2x3 卡片剛好填滿整個畫面 */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 最多 3 張卡片一列 */
+    gap: 10px; /* 讓卡片之間更緊密 */
+    padding: 20px;
+    justify-content: start; /* 讓卡片向左對齊 */
+    align-items: start;
+}
+
+/* 讓卡片變大，使 2x3 充滿整個頁面 */
+.card {
+    background: #F4C99C; /* 暖色系 */
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%; /* 讓卡片填滿格子 */
+    max-width: 400px; /* 限制最大寬度，避免過大 */
+    height: auto; /* 讓卡片高度根據內容調整 */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 讓內容從上往下排列 */
+    align-items: center;
+}
+
+/* 統一圖片大小 */
+.card img {
+    width: 100%;
+    max-width: 300px; /* 設定圖片最大寬度 */
+    height: 200px; /* 設定統一高度 */
+    object-fit: contain; /* 確保圖片完整顯示，不被裁切 */
+    border-radius: 8px;
+}
+
+/* 文字標題 */
+.card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #6A3311;
+    margin-top: 10px;
+}
+
+/* 文字內容 */
+.card p {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 5px 0; /* 控制上下間距，避免內容跑版 */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 調整深色模式 */
+.dark-mode .card {
+    background: #4A69BD;
+    color: white;
+}
+
+.dark-mode .card h2 {
+    color: #FFD700;
+}
+
+/* 深色模式 - 卡片 Hover */
+.dark-mode .card:hover {
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* 導航標籤 */
+.tabs {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    background: #FF4500; /* 淺色模式 - 鮮橙色 */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.tabs li {
+    flex: 1;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; /* 加粗 */
+    background: #FFA07A; /* 淺色模式 - 橙色 */
+    transition: background 0.3s, color 0.3s;
+}
+
+.tabs li:hover {
+    background: #FF7F50; /* 深橙 */
+}
+
+.tabs .active {
+    background: #FF6347; /* 番茄色 */
+    color: white;
+}
+
+/* 深色模式 - 導航標籤 */
+.dark-mode .tabs {
+    background: #2E4053; /* 深藍灰 */
+}
+
+.dark-mode .tabs li {
+    background: #5D6D7E; /* 冷色系 - 灰藍 */
+    color: white;
+}
+
+.dark-mode .tabs li:hover {
+    background: #4A69BD; /* 藍紫色 */
+}
+
+.dark-mode .tabs .active {
+    background: #FFD700; /* 金黃色 */
+    color: black;
+}
+
+/* 統一詳細頁面圖片大小 */
+.details-container img {
+    width: 100%;
+    max-width: 400px; /* 限制最大寬度 */
+    height: 300px; /* 設定固定高度 */
+    object-fit: contain; /* 確保圖片完整顯示，不被裁切 */
+    border-radius: 10px;
+}
+
+/* 深色模式 - 詳細內容區塊 */
+.dark-mode .details-container {
+    background: #5D6D7E; /* 深色模式 - 灰藍 */
+}
+
+/* 標籤內容 */
+.tab-content {
+    display: none;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700; /* 加粗 */
+    line-height: 1.5;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 🌙 深色模式開關樣式 */
+.theme-switch {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 增加文字與開關間距 */
+}
+
+/* 🌙 深色模式文字 */
+.theme-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: white; /* 暖色模式時為白色 */
+}
+
+/* 🎨 深色模式下的主題文字 */
+.dark-mode .theme-label {
+    color: #D7BDE2; /* 冷色模式時為淺紫色 */
+}
+
+/* 滑動開關 */
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    width: 40px;
+    height: 20px;
+    background: #FF6347; /* 暖色模式 - 番茄色 */
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.slider:before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.theme-switch input:checked + .slider {
+    background: #4A69BD; /* 冷色模式 - 藍紫色 */
+}
+
+.theme-switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* 深色模式 - Switch */
+.dark-mode .slider {
+    background: #4A69BD; /* 冷色系 - 藍紫 */
+}
+
+.dark-mode .slider:before {
+    background: #FFD700; /* 金黃色 */
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
