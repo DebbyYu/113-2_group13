@@ -15,11 +15,9 @@
   - 使用 `CSS Grid` 排列卡片，支援 `auto-fit` 與 `minmax`，可隨螢幕尺寸自動調整顯示欄數。
   - 最大寬度設定為 `900px`，確保在各種設備上都有良好體驗。
 
-
 - **CSS Grid 佈局**（[CSS Tricks - A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)）：有效實現不同欄位排版。
 - **CSS3 轉換與動畫**（[MDN Web Docs - CSS Transforms](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)）：`transform-style: preserve-3d` 與 `rotateY(180deg)` 組合，實現卡片翻轉效果。
 - **色彩搭配**（[MDN Web Docs - CSS Gradients](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient)）：應用漸層與陰影。
-
 
 ## 參考資料
 
@@ -47,4 +45,3 @@
 
 > 製作人員：林承嫻  
 > 最後更新時間：2024/03/09
-
