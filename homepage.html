@@ -14,23 +14,33 @@
             <img src="images/dog.png" alt="Logo">
             <span>狗來坐坐</span>
         </div>
-        <nav>
-            <a href="homepage.html">首頁</a> <!-- 指向首頁 -->
-            <a href="aboutus.html">關於我們</a> <!-- 指向關於我們 -->
-            <a href="dog.html">狗狗圖鑑</a> <!-- 指向成員介紹 -->
-            <a href="Petaurus.html">蜜袋鼯專區</a>
-            <a href=""></a>
-            <label for="theme-toggle" class="theme-label">深色模式開關</label>
-            <input type="checkbox" id="theme-toggle">
-            <label for="theme-toggle" class="slider"></label>
-        </nav>
+        
+        <div class="right_header">
+            <nav>
+                <a href="homepage.html">首頁</a> <!-- 指向首頁 -->
+                <a href="aboutus.html">關於我們</a> <!-- 指向關於我們 -->
+                <a href="dog.html">狗狗圖鑑</a> <!-- 指向成員介紹 -->
+                <a href="Petaurus.html">蜜袋鼯專區</a>
+                <!-- <a href=""></a> -->
+                
+            </nav>
+    
+            <div class="theme-switch">
+                <label for="theme-toggle" class="theme-label">深色模式</label>
+                <input type="checkbox" id="theme-toggle">
+                <label for="theme-toggle" class="slider"></label>
+            </div>
+        </div>
     </header>
 
     <!-- 品牌大圖 -->
     <section id="home" class="hero">
+        <img src="./images/dog_title.png" alt="???">
         歡迎狗來坐坐！
     </section>
-
+    <div class="homepagefont">
+        歡迎狗來坐坐！
+    </div>
     <script>
         // 讀取 localStorage 來確保深色模式可沿用
         function loadTheme() {
