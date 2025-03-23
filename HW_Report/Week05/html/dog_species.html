@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>狗狗介紹網站</title>
-    <link rel="stylesheet" href="./styles/dog.css">
+
+    <!-- 固定的 Header -->
+    <link rel="stylesheet" href="../styles/header.css">
+
+    <link rel="stylesheet" href="../styles/dog_species.css">
 </head>
 <body>
     <!-- 固定的 Header -->
-    <header>
-        <div class="logo">
-            <img src="images/dog.png" alt="Logo">
-            <span>狗來坐坐</span>
-        </div>
-        <nav>
-            <a href="homepage.html">首頁</a> <!-- 指向首頁 -->
-            <a href="aboutus.html">關於我們</a> <!-- 指向關於我們 -->
-            <a href="dog.html">狗狗圖鑑</a> <!-- 指向成員介紹 -->
-            <a href="Petaurus.html">蜜袋鼯專區</a>
-        </nav>
-    </header>
+    <header id="root"></header>
+    
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+    <!-- JSX 用 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- 告知 Babel 這裡的 JS 有 JSX 語法需要轉譯處理 -->
+    <script type="text/babel" src="../scripts/header.js"></script>
 
     <div class="dogpedia-header">
         <h1>🐶 狗狗圖鑑 🐾</h1>
@@ -27,7 +29,7 @@
     </div>
 
     <div class="card-container">
-        <div class="card">
+        <div class="card" data-link="./Dogpedia.html">
             <div class="card-inner">
                 <div class="card-front">
                     <img src="https://cdn.pixabay.com/photo/2023/01/01/02/42/dog-7689535_1280.jpg" alt="貴賓狗">
@@ -39,12 +41,13 @@
                         <p><strong>身體特徵:</strong> 擁有捲曲的毛髮，體型從玩具型、中型到標準型皆有，體態優雅。</p>
                         <p><strong>社會行為:</strong> 友善且易於訓練，喜愛與人互動，適應能力強。</p>
                         <p><strong>性格:</strong> 聰明、活潑且忠誠，學習能力強，喜愛參與各種活動。</p>
+                        <p>點我看更多</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-link="./Dogpedia.html">
             <div class="card-inner">
                 <div class="card-front">
                     <img src="https://i.epochtimes.com/assets/uploads/2023/04/id13977300-shutterstock_1914196390-600x400.jpg" alt="吉娃娃">
@@ -56,12 +59,13 @@
                         <p><strong>身體特徵:</strong> 體型極小，耳朵大而直立，短毛或長毛皆有。</p>
                         <p><strong>社會行為:</strong> 喜歡與主人親近，但有時對其他狗狗不太友善，需要早期社會化訓練。</p>
                         <p><strong>性格:</strong> 活潑、勇敢且機警，對主人忠誠但有時固執。</p>
+                        <p>點我看更多</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-link="./Dogpedia.html">
             <div class="card-inner">
                 <div class="card-front">
                     <img src="https://shoplineimg.com/5b0512a072fdc057d0002c31/61b19022624bd80029c9e7e9/720x.webp?source_format=jpeg" alt="博美">
@@ -73,12 +77,13 @@
                         <p><strong>身體特徵:</strong> 擁有豐厚的雙層毛，體型小巧但外觀華麗。</p>
                         <p><strong>社會行為:</strong> 喜歡交際，但有時對陌生人警戒，需要良好的社會化訓練。</p>
                         <p><strong>性格:</strong> 聰明、精力充沛且自信，容易興奮但充滿魅力。</p>
+                        <p>點我看更多</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-link="./Dogpedia.html">
             <div class="card-inner">
                 <div class="card-front">
                     <img src="https://terrymon.com/wp-content/uploads/2024/10/image2-3.jpg.webp" alt="比熊犬">
@@ -90,12 +95,13 @@
                         <p><strong>身體特徵:</strong> 擁有鬆軟的白色捲毛，體型小巧，表情總是看起來充滿活力。</p>
                         <p><strong>社會行為:</strong> 性格開朗且喜歡社交，適應力強，不會過於膽怯或具攻擊性。</p>
                         <p><strong>性格:</strong> 活潑、聰明且溫順，容易訓練，是理想的伴侶犬。</p>
+                        <p>點我看更多</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-link="./Dogpedia.html">
             <div class="card-inner">
                 <div class="card-front">
                     <img src="https://cdn.britannica.com/71/234471-050-093F4211/shiba-inu-dog-in-the-snow.jpg?w=300" alt="柴犬">
@@ -112,7 +118,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-link="./Dogpedia.html">
             <div class="card-inner">
                 <div class="card-front">
                     <img src="https://blog.buyee.com/wp-content/uploads/2020/09/1200x628-5.jpg" alt="秋田犬">
@@ -129,6 +135,8 @@
             </div>
         </div>
     </div>
-    
+
+    <script type="text/javascript" src="../scripts/cardlink.js"></script>
+
     </body>
 </html>

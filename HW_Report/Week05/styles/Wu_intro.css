@@ -1,8 +1,13 @@
+* {
+    box-sizing: border-box;  /* 設定寬度和高度包含內邊距和邊框，但不包含外邊距 */
+}
+
 body {
-    font-family: Arial;
-    padding: 20px;
+    width: 100%;
+    font-family: '微軟正黑體';
+    padding-top: 20px;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
-        url('images/background_53876-115151.jpg');
+        url('../images/background_53876-115151.jpg');
     background-repeat: repeat;
     background-size: cover;
 }
@@ -12,6 +17,7 @@ h1 {
 .content {
     margin-top: 20px;
 }
+
 a {
     color: #8e8e8e;  /* 設定名字的顏色 */
     text-decoration: none;  /* 去掉下劃線 */

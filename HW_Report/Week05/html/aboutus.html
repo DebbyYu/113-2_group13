@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>關於我們</title>
-    <link rel="stylesheet" href="./styles/aboutus.css">
-</head>
-<body>
 
     <!-- 固定的 Header -->
-    <header>
-        <div class="logo">
-            <img src="images/dog.png" alt="Logo">
-            <span>狗來坐坐</span>
-        </div>
-        <nav>
-            <a href="homepage.html">首頁</a> <!-- 指向首頁 -->
-            <a href="aboutus.html">關於我們</a> <!-- 指向關於我們 -->
-            <a href="dog.html">狗狗圖鑑</a> <!-- 指向成員介紹 -->
-            <a href="Petaurus.html">蜜袋鼯專區</a>
-        </nav>
-    </header>
+    <link rel="stylesheet" href="../styles/header.css">
+
+    <link rel="stylesheet" href="../styles/aboutus.css">
+    
+</head>
+<body>
+    <!-- 固定的 Header -->
+    <header id="root"></header>
+    
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+    <!-- JSX 用 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- 告知 Babel 這裡的 JS 有 JSX 語法需要轉譯處理 -->
+    <script type="text/babel" src="../scripts/header.js"></script>
 
     <!-- 內文區塊 -->
     <section id="about" class="content">
