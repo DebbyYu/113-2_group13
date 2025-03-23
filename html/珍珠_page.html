@@ -7,14 +7,21 @@
 
     <!-- 固定的 Header -->
     <link rel="stylesheet" href="../styles/header.css">
-    <script type="text/javascript" src="../scripts/header.js"></script>
-
-    <!-- darktheme -->
-    <script type="text/javascript" src="../scripts/darktheme.js"></script>
 
     <link rel="stylesheet" href="../styles/Wu_intro.css">
 </head>
 <body>
+    <!-- 固定的 Header -->
+    <header id="root"></header>
+    
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+    <!-- JSX 用 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- 告知 Babel 這裡的 JS 有 JSX 語法需要轉譯處理 -->
+    <script type="text/babel" src="../scripts/header.js"></script>
 
     <h1>珍珠的介紹</h1>
     <div class="content">

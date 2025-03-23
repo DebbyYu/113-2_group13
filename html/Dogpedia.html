@@ -4,15 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>寵物圖鑑首頁</title>
-    <!-- 固定的 Header -->
     <link rel="stylesheet" href="../styles/header.css">
-    <script type="text/javascript" src="../scripts/header.js"></script>
-
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="../styles/Sidebar.css">
     
   </head>
   <body>
+    <!-- 固定的 Header -->
+    <header id="root"></header>
+    
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+    <!-- JSX 用 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- 告知 Babel 這裡的 JS 有 JSX 語法需要轉譯處理 -->
+    <script type="text/babel" src="../scripts/header.js"></script>
+
     <!-- 頂部區塊，預留 100px -->
     <div class="top-space">
       <!-- 這裡可以放 LOGO、網站標題、導航列等 -->
