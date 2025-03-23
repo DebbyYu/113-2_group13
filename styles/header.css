@@ -1,0 +1,104 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgb(255, 255, 255, 0.6);  /* 半透明 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Logo 區塊 */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 選單 */
+nav a {
+    text-decoration: none;
+    --color: #1a1a1a;
+    color: var(--color);
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: hsl(from var(--color) h s calc(l * 5));
+}
+
+nav a:active {
+    color: hsl(from var(--color), h s 0);
+}
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+.theme-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333; 
+}
+
+.dark-mode .theme-label {
+    color: #D7BDE2;
+}
+
+.slider {
+    width: 40px;
+    height: 20px;
+    background: #FF6347;
+    border-radius: 10px;
+    position: relative;
+    /* display: inline-block; */
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.slider::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.4px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+#theme-toggle:checked + .slider {
+    background: #4A69BD; 
+}
+
+#theme-toggle:checked + .slider::before {
+    left: 20px;
+    transform: translateX(-100%);
+}
+
+
+.dark-mode .slider {
+    background: #4A69BD; 
+}
+
+.dark-mode .slider::before {
+    background: #D7BDE2; 
+}
