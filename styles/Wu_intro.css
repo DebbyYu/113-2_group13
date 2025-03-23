@@ -1,5 +1,10 @@
+* {
+    box-sizing: border-box;  /* 設定寬度和高度包含內邊距和邊框，但不包含外邊距 */
+}
+
 body {
-    font-family: 微軟正黑體;
+    width: 100%;
+    font-family: '微軟正黑體';
     padding-top: 20px;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
         url('../images/background_53876-115151.jpg');

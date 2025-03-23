@@ -1,22 +1,28 @@
-// 讀取 localStorage 來確保深色模式可沿用
+// 深色模式初始化
 function loadTheme() {
-    const darkModeEnabled = localStorage.getItem("darkMode") === "enabled";
-    if (darkModeEnabled) {
-        document.body.classList.add("dark-mode");
-        document.getElementById('theme-toggle').checked = true;
-    }
-}
-
-// 切換深色模式
-document.getElementById('theme-toggle').addEventListener('change', function() {
-    if (this.checked) {
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("darkMode", "enabled"); // 記錄深色模式
+    const darkMode = localStorage.getItem("darkMode");
+    const isDarkMode = darkMode === "enabled";
+    document.getElementById("theme-toggle").checked = isDarkMode;
+  
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+      document.getElementById('Logo').src='../images/dark_dog.png';
     } else {
-        document.body.classList.remove("dark-mode");
-        localStorage.setItem("darkMode", "disabled"); // 記錄淺色模式
+      document.body.classList.remove("dark-mode");
+      document.getElementById('Logo').src='../images/dog.png';
     }
-});
-
-// 頁面載入時應用已儲存的主題設定
-loadTheme();
+  }
+  
+  document.getElementById("theme-toggle").addEventListener("change", function () {
+    if (this.checked) {
+      document.body.classList.add("dark-mode");
+      document.getElementById('Logo').src='../images/dark_dog.png';
+      localStorage.setItem("darkMode", "enabled");
+    } else {
+      document.body.classList.remove("dark-mode");
+      document.getElementById('Logo').src='../images/dog.png';
+      localStorage.setItem("darkMode", "disabled");
+    }
+  });
+  
+  loadTheme();
