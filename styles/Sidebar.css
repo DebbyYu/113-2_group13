@@ -6,7 +6,6 @@
     /* background: linear-gradient(to bottom, #e9b9ff, #c776ed);   */
     /* border: 2px solid #d1a3ff;  邊框 */
     color: rgb(62, 51, 70);  
-    height: 100vh; /* 全螢幕高度 */
     top: 60;  /* 與上方的距離 */
     left: 0;  /* 與左邊的距離 */
     padding: 10px; /* 內容與邊框的距離 */
@@ -22,13 +21,17 @@
     border-top: 2px solid #000;
     border-left: 2px solid #000;
     border-right: 2px solid #000;
-    border-bottom: 1px solid #000;
+    border-bottom: 2px solid #000;
+  }
+
+  .sidebar h2:hover {
+    scale: 1.05;
+    border-top: 1px solid #000;
   }
   
   .sidebar ul {
     list-style: none;  /* 去掉項目符號 */
     padding: 0;  /* 去掉內容與邊框的距離 */
-    border-bottom: 1px solid #000;
   }
   
   .sidebar ul li {
@@ -40,6 +43,7 @@
     border-left: 2px solid #000;
     border-right: 2px solid #000;
     border-bottom: 1px solid #000;
+    visibility: hidden;
   }
   
   .sidebar ul li a {
@@ -49,8 +53,9 @@
     
   }
   
-  .sidebar ul li a:hover {
-    text-decoration: underline;  /* 鼠標懸停時加上下劃線 */
+  .sidebar ul li:hover {
+    cursor: pointer;  /* 鼠標懸停時加上下劃線 */
+    scale: 1.05;
   }  
 
 /* 深色模式 */
@@ -75,4 +80,17 @@
 
 .dark-mode .sidebar ul li a {
     color: rgb(193, 204, 185);
+}
+
+.sidebar ul li.show {
+  visibility: visible;
+  transform: 0.3s ;
+}
+
+.sidebar ul.show {
+  border-bottom: 1px solid #000;
+}
+
+.sidebar h2.show {
+  border-bottom: 1px solid #000;
 }
