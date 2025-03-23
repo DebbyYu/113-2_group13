@@ -73,7 +73,7 @@
 
 ## 組員分工(第13組)
 
-- 余岱芸：Dogpedia.html 與卡片互動設計 25%
+- 余岱芸：Dogpedia.html 彈出式卡片視窗設計 25%
 - 林承嫻：Dogpedia.html 的 Sidebar + dog_species.html & CSS & Javascript 設計 25%
 - 林冠廷：Dogpedia.html Sidebar 以外部分 + 同頁dark-mode & CSS & Javascript 設計 25%
 - 鄭皓中：整合、優化各HTML + 整理Report 25%
