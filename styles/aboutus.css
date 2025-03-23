@@ -13,49 +13,10 @@ body {
     height: 100vh;
 }
 
-/* 固定 Header */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: rgb(255, 255, 255, 0.6);  /* 半透明 */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-/* Logo 區塊 */
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 30px;
-    margin-right: 10px;
-}
-
-.logo span {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* 選單 */
-nav a {
-    text-decoration: none;
-    color: #333;
-    margin-left: 15px;
-    font-size: 16px;
-}
-
-nav a:hover {
-    color: rgb(121, 121, 121);
-}
+.dark-mode {
+    background-color: #222;
+    color: #eee;
+  }
 
 /* 內文區塊 */
 .content {
@@ -69,7 +30,7 @@ nav a:hover {
 }
 
 /* 內文區塊的各個部分 */
-#about, #members {
+#about {
     width: 80%;
     margin: 20px auto; /* 讓 #about 和 #members 置中 */
     padding: 20px;
@@ -79,6 +40,11 @@ nav a:hover {
     border: 5px solid black;  /* 設定外框 5px 粗，黑色 */
     padding: 10px;  /* 讓內部內容不要太貼近邊框 */
     display: block;  /* 讓方塊大小適應內容 */
+}
+
+.dark-mode #about {
+    background: #2c3e50;
+    border: 5px solid white;  /* 設定外框 5px 粗，黑色 */
 }
 
 /* 修改表格中名字的連結樣式 */

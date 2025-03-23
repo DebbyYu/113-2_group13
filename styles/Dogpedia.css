@@ -6,12 +6,12 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  padding-top: 50px;
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #b5a8ff5b, #b689f061);
   color: #333;
   transition: background 0.3s, color 0.3s;
+  font-family: '微軟正黑體', sans-serif;  
 }
 
 .dark-mode {
@@ -25,7 +25,6 @@ body {
   width: 100%;
   background-color: #ffe4c4;
   top: 40;  /* 與上方的距離 */
-  margin-top: 40px;
   background: linear-gradient(to bottom, #e9b9ff, #bd76ed);  
   color: white;
   text-align: center;  /* 文字置中 */
