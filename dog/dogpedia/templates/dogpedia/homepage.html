@@ -1,47 +1,15 @@
-<!DOCTYPE html>
+{% extends "dogpedia/base_generic.html" %}
 {% load static %}
-<html lang="zh-TW">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>寵物圖鑑</title>
+{% block title %}Dogpedia{% endblock  %}
+{% block extrastatic %}
+<link rel="stylesheet" href="{% static "styles/homepage.css" %}">
+{% endblock  %}
 
 
-    <link rel="stylesheet" href="{% static "styles/header.css" %}">
 
-    <link rel="stylesheet" href="{% static "styles/homepage.css" %}">
-</head>
-
-<body>
-    <!-- 固定的 Header -->
-    <div class="Header">
-        <div class='logo'>
-            <img src="{% static 'images/dog.png' %}" alt='Logo' id='Logo' />
-            <span>狗來坐坐</span>
-        </div>
-        <div class='Lead_line'>
-            <nav>
-                <a href='homepage.html'>首頁</a> 
-                <a href='aboutus.html'>關於我們</a>
-                <a href='dog_species.html'>狗狗圖鑑</a> 
-                <a href='Petaurus.html'>蜜袋鼯專區</a>
-            </nav>
-            <div class='theme-switch'>
-                <label class='theme-label' for='theme-toggle'>深色模式</label>
-                <input type='checkbox' id='theme-toggle' />
-                <label for='theme-toggle' class='slider'></label>
-            </div>
-        </div>
-    </div>
-
-    <script type="text/javascript" src="{% static "scripts/header.js" %}"></script>
-
-    <!-- 品牌大圖 -->
-    <section id="home" class="hero">
-        歡迎狗來坐坐！
-    </section>
-
-</body>
-
-</html>
+{% block content %}
+<!-- 品牌大圖 -->
+<section id="home" class="hero">
+    歡迎狗來坐坐！
+</section>
+{% endblock %}

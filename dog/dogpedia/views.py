@@ -23,3 +23,6 @@ def petaurus_view(request):
 
 def index(request):
     return render(request, 'dogpedia/homepage.html', {})
+
+def header(request, header_id = ''):
+    return render(request, 'dogpedia/' + header_id + '.html', {})

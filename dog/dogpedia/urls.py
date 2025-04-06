@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from dogpedia.views import index
+from dogpedia import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index)
+    path('', views.index),
+    path('<str:header_id>/', views.header, name='header-url')
 ]

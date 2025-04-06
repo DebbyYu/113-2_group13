@@ -31,8 +31,9 @@
 }
 
 .Logo_img {
-    background-image: "../images/dark_dog.png";
+    content: url("../images/dog.png");
 }
+
 
 /* 選單 */
 nav a {
@@ -120,4 +121,8 @@ nav a:active {
 
 .dark-mode .Header {
     background: rgb(0, 0, 0, 0.3);  /* 半透明 */
+}
+
+.dark-mode .Logo_img {
+  content: url("../images/dark_dog.png");
 }
