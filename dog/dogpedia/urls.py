@@ -22,5 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('<str:header_id>/', views.header, name='header-url'),
-    path('Petaurus/<str:Petaurus_id>', views.Petaurus, name='Petaurus-url')
+    path('Petaurus/<str:Petaurus_id>', views.Petaurus, name='Petaurus-url'),
+    path('dog_species/<str:breed>', views.dog_species_view, name='dog_species-url'),
+    path('dog_species/<str:dog_id>', views.dog_view, name='dog-url')
 ]

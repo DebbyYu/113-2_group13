@@ -1,19 +1,6 @@
-// 共用 Sidebar
-document.writeln("<div class='sidebar'>");
-document.writeln("  <h2>狗狗品種</h2>");
-document.writeln("  <ul>");
-document.writeln("    <li onclick=\"buttonAction('Poodle')\"><a>貴賓狗</a></li>");
-document.writeln("    <li onclick=\"buttonAction('Chihuahua')\"><a>吉娃娃</a></li>");
-document.writeln("    <li onclick=\"buttonAction('Pomeranian')\"><a>博美</a></li>");
-document.writeln("    <li onclick=\"buttonAction('Bichon_Frise')\"><a>比熊犬</a></li>");
-document.writeln("    <li onclick=\"buttonAction('Shiba_Inu')\"><a>柴犬</a></li>");
-document.writeln("    <li onclick=\"buttonAction('Akita_Inu')\"><a>秋田犬</a></li>");
-document.writeln("  </ul>");
-document.writeln("</div>");
-
 const buttonAction = (breed) => {
     // ✅ 加上網址參數切換品種
-    window.location.href = "./Dogpedia.html?breed=" + encodeURIComponent(breed);
+    window.location.href = "./dogs?breed=" + encodeURIComponent(breed);
 };
 
 

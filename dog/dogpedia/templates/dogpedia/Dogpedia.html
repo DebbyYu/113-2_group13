@@ -1,63 +1,49 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
+{% extends "dogpedia/base_generic.html" %}
+{% load static %}
+{% block title %}寵物圖鑑首頁{% endblock  %}
+{% block extrastatic %}
+<link rel="stylesheet" href="{% static "styles/Dogpedia.css" %}">
+<link rel="stylesheet" href="{% static "styles/Sidebar.css" %}">
+<link rel="stylesheet" href="{% static "styles/Dog_IDcard.css" %}">
+{% endblock  %}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>寵物圖鑑首頁</title>
+{% block content %}
+<div class="top-space">
+  <h1>🐶 狗狗圖鑑 🐾</h1>
+  <p>探索不同品種的狗狗，了解牠們的特性與生活方式！</p>
+</div>
 
-  <link rel="stylesheet" href="../styles/header.css">
-  <link rel="stylesheet" href="../styles/Dogpedia.css" />
-  <link rel="stylesheet" href="../styles/Sidebar.css">
-  <link rel="stylesheet" href="../styles/Dog_IDcard.css" />
-</head>
+<div class="main-container">
+  <aside class="left-space">
+    {% include "dogpedia/sidebar.html" %}
+  </aside>
 
-<body>
-  <header id="root"></header>
-
-  <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <script type="text/babel" src="../scripts/header.js"></script>
-
-  <div class="top-space">
-    <h1>🐶 狗狗圖鑑 🐾</h1>
-    <p>探索不同品種的狗狗，了解牠們的特性與生活方式！</p>
-  </div>
-
-  <div class="main-container">
-    <aside class="left-space">
-      <script type="text/javascript" src="../scripts/Sidebar.js"></script>
-    </aside>
-
-    <section class="card-section">
-      <div class="card-grid" id="card-grid">
-        <!-- 卡片由 JavaScript 動態生成 -->
-      </div>
-    </section>
-  </div>
-
-  <div class="overlay" id="overlay">
-    <div class="expanded-card">
-      <button class="close-btn" onclick="closeCard()">X</button>
-      <div class="tab-buttons">
-        <button class="tab-btn active" data-tab="profile">狗勾資料</button>
-        <button class="tab-btn" data-tab="interest">興趣</button>
-        <button class="tab-btn" data-tab="traits">特色</button>
-        <button class="tab-btn" data-tab="care">飼養須知</button>
-      </div>
-      <h2 id="expanded-title"></h2>
-      <div class="tab-content" id="profile-content"></div>
-      <div class="tab-content" id="interest-content" style="display: none;"></div>
-      <div class="tab-content" id="traits-content" style="display: none;"></div>
-      <div class="tab-content" id="care-content" style="display: none;"></div>
+  <section class="card-section">
+    <div class="card-grid" id="card-grid">
+      <!-- 卡片由 JavaScript 動態生成 -->
     </div>
+  </section>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="expanded-card">
+    <button class="close-btn" onclick="closeCard()">X</button>
+    <div class="tab-buttons">
+      <button class="tab-btn active" data-tab="profile">狗勾資料</button>
+      <button class="tab-btn" data-tab="interest">興趣</button>
+      <button class="tab-btn" data-tab="traits">特色</button>
+      <button class="tab-btn" data-tab="care">飼養須知</button>
+    </div>
+    <h2 id="expanded-title"></h2>
+    <div class="tab-content" id="profile-content"></div>
+    <div class="tab-content" id="interest-content" style="display: none;"></div>
+    <div class="tab-content" id="traits-content" style="display: none;"></div>
+    <div class="tab-content" id="care-content" style="display: none;"></div>
   </div>
+</div>
 
-  <script type="text/javascript" src="../scripts/Dog_IDcard.js"></script>
-  <script type="text/javascript" src="../scripts/Dogpedia.js"></script>
-  <script type="text/javascript" src="../scripts/Dogpedia_data.js"></script>
+<script type="text/javascript" src="{% static "scripts/Dog_IDcard.js" %}"></script>
+<script type="text/javascript" src="{% static "scripts/Dogpedia.js" %}"></script>
+<script type="text/javascript" src="{% static "scripts/Dogpedia_data.js" %}"></script>
 
-</body>
-
-</html>
+{% endblock %}
