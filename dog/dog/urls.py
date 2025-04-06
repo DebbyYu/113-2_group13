@@ -27,12 +27,12 @@ urlpatterns = [
 
 # Use include() to add paths from the Dogpedia application
 urlpatterns += [
-    path('Dogpedia/', include('Dogpedia.urls')),
+    path('dogpedia/', include('dogpedia.urls')),
 ]
 
 #Add URL maps to redirect the base URL to our application
 urlpatterns += [
-    path('', RedirectView.as_view(url='/Dogpedia/')),
+    path('', RedirectView.as_view(url='/dogpedia/')),
 ]
 
 # Use static() to add url mapping to serve static files during development (only)
