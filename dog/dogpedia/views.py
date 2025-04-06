@@ -26,3 +26,6 @@ def index(request):
 
 def header(request, header_id = ''):
     return render(request, 'dogpedia/' + header_id + '.html', {})
+
+def Petaurus(request, Petaurus_id = ''):
+    return render(request, 'dogpedia/Petaurus/' + Petaurus_id + '.html', {})

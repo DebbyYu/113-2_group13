@@ -21,5 +21,6 @@ from dogpedia import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('<str:header_id>/', views.header, name='header-url')
+    path('<str:header_id>/', views.header, name='header-url'),
+    path('Petaurus/<str:Petaurus_id>', views.Petaurus, name='Petaurus-url')
 ]
