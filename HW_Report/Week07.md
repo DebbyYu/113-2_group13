@@ -68,6 +68,14 @@
 
 2. 調整`compose.yaml`，透過其`pull postgres`來作為database使用
 
+### 啟用Docker
+
+1. 從Docker Hub上將Image pull到本機端，網址：[https://hub.docker.com/repository/docker/nqap/django-docker/general](https://hub.docker.com/repository/docker/nqap/django-docker/general)
+
+2. 使用 `docker compose up --build` 執行，由於我們的db是使用pull下來的Image，需要build的過程中將其pull下來才可以完整運行
+
+- 環境變數及設定檔已經附在Image中，經測試後只要用build執行即可使用
+
 ## 組員分工
 
 - 林承嫻：`views.py`的規劃 25%
