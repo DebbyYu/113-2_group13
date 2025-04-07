@@ -4,7 +4,7 @@
 
 ### 程式碼更動
 
-把「Dogpedia_data」改寫成獨立的 .js 檔案
+把Dogpedia_data改寫成獨立的 `.js` 檔案
 
 ### 優點
 
@@ -16,8 +16,8 @@
 
 1. 點擊寵物個體無法開啟細項小窗
 
-    使用的是 JavaScript 動態產生卡片（在 Dogpedia_data.js 中 document.createElement("div") 建立 .card）
-    但在 Dog_IDcard.js 中用 DOMContentLoaded 的初始時機選取 .card，那時候這些元素尚未出現在 DOM 中，所以無法綁定事件。
+    使用的是 JavaScript 動態產生卡片（在 Dogpedia_data.js 中 `document.createElement("div")` 建立 `.card`）
+    但在 Dog_IDcard.js 中用 `DOMContentLoaded` 的初始時機選取 `.card`，那時候這些元素尚未出現在 DOM 中，所以無法綁定事件。
 
     解決方法：用事件委派（event delegation）來綁定 .card 的點擊事件
 
