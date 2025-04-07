@@ -70,6 +70,14 @@
 
 ## 組員分工
 
+- 林承嫻：`views.py`的規劃 25%
+- 余岱芸：`urls.py`, `views.py`的調整 25%
+- 林冠廷：`models.py`, `Dogpedia_data.js`的調整及設計 25%
+- 鄭皓中：`templates/`設計 + Docker使用 + 整理Report 25%
+
 ## Reference
 
-Django to docker:[https://www.docker.com/blog/how-to-dockerize-django-app/](https://www.docker.com/blog/how-to-dockerize-django-app/)
+Django to docker 1 : [https://www.docker.com/blog/how-to-dockerize-django-app/](https://www.docker.com/blog/how-to-dockerize-django-app/)
+Django to docker 2 : [https://orcahmlee.github.io/devops/docker-nginx-uwsgi-django-root/](https://orcahmlee.github.io/devops/docker-nginx-uwsgi-django-root/)
+Django static : [https://blog.csdn.net/qq_43556844/article/details/113377335](https://blog.csdn.net/qq_43556844/article/details/113377335)
+Django template : [https://developer.mozilla.org/zh-TW/docs/Learn_web_development/Extensions/Server-side/Django/Home_page](https://developer.mozilla.org/zh-TW/docs/Learn_web_development/Extensions/Server-side/Django/Home_page)
