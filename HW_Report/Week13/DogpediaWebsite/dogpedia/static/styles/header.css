@@ -1,0 +1,128 @@
+.Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgb(255, 255, 255, 0.6);  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-weight: bold;
+}
+
+
+/* Logo 區塊 */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 18px;
+}
+
+.Logo_img {
+    content: url("../images/dog.png");
+}
+
+
+/* 選單 */
+nav a {
+    text-decoration: none;
+    --color: #1a1a1a;
+    color: var(--color);
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: hsl(from var(--color) h s calc(l * 5));
+}
+
+nav a:active {
+    color: hsl(from var(--color), h s 0);
+}
+
+.Lead_line {
+    display: flex;
+}
+
+/* ======= 深色模式切換按鈕區 ======= */
+.theme-switch {
+    position: relative;
+    left: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .theme-label {
+    color: #333;
+    margin-right: 8px;
+    font-weight: 600;
+  }
+  
+  .dark-mode .theme-label {
+    color: white;
+  }
+  
+  .theme-switch input {
+    display: none;
+  }
+  
+  .slider {
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .slider:before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  .theme-switch input:checked + .slider {
+    background: #007bff;
+  }
+  
+  .theme-switch input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+
+.dark-mode nav a {
+    color: white;
+}
+
+.dark-mode nav a:hover {
+    color: #cccccc;
+}
+
+.dark-mode .logo span {
+    color: white;
+}
+
+.dark-mode .Header {
+    background: rgb(0, 0, 0, 0.3);  /* 半透明 */
+}
+
+.dark-mode .Logo_img {
+  content: url("../images/dark_dog.png");
+}

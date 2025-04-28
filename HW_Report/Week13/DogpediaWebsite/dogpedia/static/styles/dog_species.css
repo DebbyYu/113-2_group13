@@ -1,0 +1,153 @@
+* {
+    margin: 0;  /* 邊距 */
+    padding: 0;  /* 內距 */
+    box-sizing: border-box;  /* 設定寬度和高度包含內邊距和邊框，但不包含外邊距 */
+}
+
+.dogpedia-header {
+    position: relative;  /* 固定在畫面上方 */
+    top: 40;  /* 與上方的距離 */
+    width: 100%;  /* 寬度 */
+    height: 100px;  /* 高度 */
+    background: linear-gradient(to bottom, #e9b9ff, #bd76ed);  
+    color: white;
+    text-align: center;  /* 文字置中 */
+    line-height: 40px;  /* 行高 */
+    padding: 15px 0;  /* 上下各留 15px 的空間 */
+    font-size: 20px;  /* 字體大小 */
+    font-weight: bold;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dark-mode .dogpedia-header {
+    background: none;
+    background-color: #2c3e50;
+    border: 2px solid #ffffff;
+  }
+
+/* 避免內容被標題遮擋 */
+body {
+    padding-top: 50px;  /* 上方留 50px 的空間 */
+    font-family: '微軟正黑體', sans-serif;  
+    display: flex;  /* 讓內容左右對齊 */
+    flex-direction: column;  /* 讓內容從上到下排列 */
+    align-items: center;  /* 讓內容置中 */
+    background: linear-gradient(to bottom, #b5a8ff5b, #b689f061);
+    /* background: #fefefe; */
+}
+
+.dark-mode {
+    background-color: #222;
+    color: #eee;
+  }
+
+/* 讓卡片以兩欄顯示 */
+.card-container {
+    margin-top: 40px;  /* 去掉上方的空間 */
+    padding: 20px;  /* 內容與邊框的距離 */
+    flex: 1;  /* 讓內容自動延展 */
+    display: grid;  /* 使用網格排列 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* 自動調整欄位寬度 */
+    gap: 80px;  /* 欄位間的距離 */
+    padding: 20px;  /* 內容與邊框的距離 */
+    max-width: 900px;  /* 最大寬度 */
+   
+}
+
+.card {
+    display: flex;  /* 讓內容左右對齊 */
+    flex-direction: column;  /* 讓內容從上到下排列 */
+    align-items: center;  /* 讓內容置中 */
+    text-align: center;  /* 文字置中 */
+}
+
+/* 卡片翻轉效果 */
+.card {
+    width: 320px;
+    height: 450px;
+    perspective: 1000px;  /* 透視效果 */
+    position: relative;  /* 相對定位 */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;  /* 絕對定位 */
+    transition: transform 0.6s;  /* 轉場效果 */
+    transform-style: preserve-3d;  /* 保持 3D 效果 */
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);  /* 翻轉 180 度 */
+    cursor: pointer;
+    
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #d1a3ff;
+}
+
+.card-front img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card-back {
+    background: linear-gradient(to bottom, #c9b6ff, #fefefe);
+    /* background-image: url('images/background-dot_720029-2770.jpg'); */
+    color: black;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-back h2 {
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.card-back .description {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.back {
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+    color: #ffffff;
+}
+
+/* 修改表格中名字的連結樣式 */
+a {
+    color: #8e8e8e;  /* 設定名字的顏色 */
+    text-decoration: none;  /* 去掉下劃線 */
+    font-weight: bold;  /* 讓文字加粗 */
+}
+
+a:hover {
+    color: #515151;  /* 當鼠標懸停時，文字顏色變暗 */
+    text-decoration: underline;  /* 鼠標懸停時加上下劃線 */
+}

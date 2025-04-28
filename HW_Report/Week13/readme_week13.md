@@ -1,0 +1,2 @@
+改圖片去Dogpedia_data改img_src
+圖片放images資料夾照種類名稱_編號（其實Dogpedia_data寫好就好
