@@ -1,0 +1,18 @@
+{% extends "dogpedia/base_generic.html" %}
+{% load static %}
+{% block title %}奶茶的介紹{% endblock  %}
+{% block extrastatic %}
+<link rel="stylesheet" href="{% static "styles/Wu_intro.css" %}">
+{% endblock  %}
+
+
+
+{% block content %}
+<h1>奶茶的介紹</h1>
+<div class="content">
+    <img src="{% static "images/奶茶.jpg" %}" width="200" alt="奶茶的圖片">
+    <p>奶茶是一個非常溫暖和親切的成員，他總是充滿愛心，並且擅長關心他人。他在家裡的角色是每個人情感的支持。</p>
+    <p>最喜歡的食物：甜點和奶製品。</p>
+</div>
+{% endblock %}
+
