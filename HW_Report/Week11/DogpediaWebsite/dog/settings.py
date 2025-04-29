@@ -75,8 +75,15 @@ WSGI_APPLICATION = 'dog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dog_db', # mySQL的數據庫名稱
+        'USER':'root', # mySQL的用戶名稱
+        'PASSWORD':'12345', # mySQL的密碼
+        'HOST':'localhost', # mySQL的主機
+        'PORT':'3306', # mySQL的固定端口
+        'OPTIONS':{
+            'sql_mode':'STRICT_TRANS_TABLES'
+        }
     }
 }
 
