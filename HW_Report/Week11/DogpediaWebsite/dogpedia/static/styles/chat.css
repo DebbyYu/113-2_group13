@@ -1,0 +1,49 @@
+.top-space {
+    height: 100px;
+    width: 100%;
+    background-color: #ffe4c4;
+    top: 40;  /* 與上方的距離 */
+    background: linear-gradient(to bottom, #e9b9ff, #bd76ed);  
+    color: white;
+    text-align: center;  /* 文字置中 */
+    line-height: 40px;  /* 行高 */
+    padding: 15px 0;  /* 上下各留 15px 的空間 */
+    font-size: 20px;  /* 字體大小 */
+    font-weight: bold;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+body {
+    font-family: '微軟正黑體', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+#chat-box {
+    background: linear-gradient(to bottom, #f7e6ff, #eed4ff); ;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+}
+
+#message-form {
+    display: flex;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.message {
+    margin-bottom: 5px;
+}
+
+.system-message {
+    color: #666666;
+    font-family: '微軟正黑體', sans-serif;
+}
