@@ -11,65 +11,46 @@
 ## File tree
 
 ```
-📦113-2_group13
- ┣ 📂HW_Report
- ┃ ┣ 📂Week03
- ┃ ┣ 📂Week05
- ┃ ┣ 📂Week07
- ┃ ┣ 📂Week11
- ┃ ┃ ┣ 📂DogpediaWebsite
- ┃ ┃ ┃ ┣ 📂dog
- ┃ ┃ ┃ ┃ ┣ 📂__pycache__
- ┃ ┃ ┃ ┃ ┃ ┣ 📜__init__.cpython-312.pyc
- ┃ ┃ ┃ ┃ ┃ ┣ 📜settings.cpython-312.pyc
- ┃ ┃ ┃ ┃ ┃ ┣ 📜urls.cpython-312.pyc
- ┃ ┃ ┃ ┃ ┃ ┗ 📜wsgi.cpython-312.pyc
- ┃ ┃ ┃ ┃ ┣ 📜__init__.py
- ┃ ┃ ┃ ┃ ┣ 📜asgi.py
- ┃ ┃ ┃ ┃ ┣ 📜settings.py
- ┃ ┃ ┃ ┃ ┣ 📜urls.py
- ┃ ┃ ┃ ┃ ┗ 📜wsgi.py
- ┃ ┃ ┃ ┣ 📂dogpedia
- ┃ ┃ ┃ ┃ ┣ 📂migrations
- ┃ ┃ ┃ ┃ ┣ 📂static
- ┃ ┃ ┃ ┃ ┃ ┣ 📂images
- ┃ ┃ ┃ ┃ ┃ ┣ 📂scripts
- ┃ ┃ ┃ ┃ ┃ ┗ 📂styles
- ┃ ┃ ┃ ┃ ┣ 📂templates
- ┃ ┃ ┃ ┃ ┃ ┗ 📂dogpedia
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂Petaurus
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜Dogpedia.html
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜Petaurus.html
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜aboutus.html
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜base_generic.html
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜dog_species.html
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜header.html
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜homepage.html
- ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜sidebar.html
- ┃ ┃ ┃ ┃ ┣ 📜__init__.py
- ┃ ┃ ┃ ┃ ┣ 📜admin.py
- ┃ ┃ ┃ ┃ ┣ 📜apps.py
- ┃ ┃ ┃ ┃ ┣ 📜models.py
- ┃ ┃ ┃ ┃ ┣ 📜urls.py
- ┃ ┃ ┃ ┃ ┗ 📜views.py
- ┃ ┃ ┃ ┣ 📂media
- ┃ ┃ ┃ ┃ ┣ 📂breeds
- ┃ ┃ ┃ ┃ ┣ 📂dogs
- ┃ ┃ ┃ ┃ ┗ 📂gliders
- ┃ ┃ ┃ ┗ 📜manage.py
- ┃ ┃ ┣ 📂dog_db
- ┃ ┃ ┣ 📜DBscript - 60dogs.txt
- ┃ ┃ ┣ 📜DBscript - breeds.txt
- ┃ ┃ ┣ 📜DBscript - dogs.txt
- ┃ ┃ ┣ 📜Readme.md
- ┃ ┃ ┗ 📜week11.md
- ┃ ┣ 📜Week03.md
- ┃ ┣ 📜Week05.md
- ┃ ┗ 📜Week07.md
- ┣ 📂Update
- ┣ 📂各Markdown原檔
- ┃ ┣ 📂Week03
- ┃ ┗ 📂Week05
- ┣ 📜.gitignore
- ┗ 📜Readme.md
+Week11
+ ┣ DogpediaWebsite
+ ┃ ┣ dog
+ ┃ ┃ ┣ __init__.py
+ ┃ ┃ ┣ asgi.py
+ ┃ ┃ ┣ settings.py
+ ┃ ┃ ┣ urls.py
+ ┃ ┃ ┗ wsgi.py
+ ┃ ┣ dogpedia
+ ┃ ┃ ┣ migrations
+ ┃ ┃ ┣ static
+ ┃ ┃ ┃ ┣ images
+ ┃ ┃ ┃ ┣ scripts
+ ┃ ┃ ┃ ┗ styles
+ ┃ ┃ ┣ templates
+ ┃ ┃ ┃ ┗ dogpedia
+ ┃ ┃ ┃ ┃ ┣ Petaurus
+ ┃ ┃ ┃ ┃ ┣ Dogpedia.html
+ ┃ ┃ ┃ ┃ ┣ Petaurus.html
+ ┃ ┃ ┃ ┃ ┣ aboutus.html
+ ┃ ┃ ┃ ┃ ┣ base_generic.html
+ ┃ ┃ ┃ ┃ ┣ dog_species.html
+ ┃ ┃ ┃ ┃ ┣ header.html
+ ┃ ┃ ┃ ┃ ┣ homepage.html
+ ┃ ┃ ┃ ┃ ┗ sidebar.html
+ ┃ ┃ ┣ __init__.py
+ ┃ ┃ ┣ admin.py
+ ┃ ┃ ┣ apps.py
+ ┃ ┃ ┣ models.py
+ ┃ ┃ ┣ urls.py
+ ┃ ┃ ┗ views.py
+ ┃ ┣ media
+ ┃ ┃ ┣ breeds
+ ┃ ┃ ┣ dogs
+ ┃ ┃ ┗ gliders
+ ┃ ┗ manage.py
+ ┣ dog_db
+ ┣ DBscript - 60dogs.txt
+ ┣ DBscript - breeds.txt
+ ┣ DBscript - dogs.txt
+ ┣ Readme.md
+ ┗ week11.md
 ```
