@@ -8,7 +8,7 @@ DogBreed.objects.bulk_create([
         body_features="擁有捲曲的毛髮，體型從玩具型、中型到標準型皆有，體態優雅。",
         social_behavior="友善且易於訓練，喜愛與人互動，適應能力強。",
         personality="聰明、活潑且忠誠，學習能力強，喜愛參與各種活動。",
-        cover_image="breeds/poodle.png"
+        cover_image="../../../media/breeds/poodle.png",
     ),
     DogBreed(
         name="吉娃娃",
@@ -17,7 +17,7 @@ DogBreed.objects.bulk_create([
         body_features="體型極小，耳朵大而直立，短毛或長毛皆有。",
         social_behavior="喜歡與主人親近，但有時對其他狗狗不太友善，需要早期社會化訓練。",
         personality="活潑、勇敢且機警，對主人忠誠但有時固執。",
-        cover_image="breeds/chihuahua.png"
+        cover_image="../../../media/breeds/chihuahua.png",
     ),
     DogBreed(
         name="博美犬",
@@ -26,7 +26,7 @@ DogBreed.objects.bulk_create([
         body_features="擁有豐厚的雙層毛，體型小巧但外觀華麗。",
         social_behavior="喜歡交際，但有時對陌生人警戒，需要良好的社會化訓練。",
         personality="聰明、精力充沛且自信，容易興奮但充滿魅力。",
-        cover_image="breeds/pomeranian.png"
+        cover_image="../../../media/breeds/pomeranian.png",
     ),
     DogBreed(
         name="比熊犬",
@@ -35,7 +35,7 @@ DogBreed.objects.bulk_create([
         body_features="擁有鬆軟的白色捲毛，體型小巧，表情總是看起來充滿活力。",
         social_behavior="性格開朗且喜歡社交，適應力強，不會過於膽怯或具攻擊性。",
         personality="活潑、聰明且溫順，容易訓練，是理想的伴侶犬。",
-        cover_image="breeds/bichon.png"
+        cover_image="../../../media/breeds/bichon.png",
     ),
     DogBreed(
         name="柴犬",
@@ -44,7 +44,7 @@ DogBreed.objects.bulk_create([
         body_features="體型中小，擁有濃密的雙層毛，耳朵直立，尾巴捲曲。",
         social_behavior="友善但有點固執，需要從小進行良好的社會化訓練。",
         personality="活潑、自信，對主人忠誠但有時較為獨立。",
-        cover_image="breeds/shiba.png"
+        cover_image="../../../media/breeds/shiba.png",
     ),
     DogBreed(
         name="秋田犬",
@@ -53,7 +53,6 @@ DogBreed.objects.bulk_create([
         body_features="體型較大，肌肉結實，擁有濃密的雙層毛。",
         social_behavior="需要早期社會化，對家人友好但對陌生人較警惕。",
         personality="自信、沉穩，對主人極度忠誠。",
-        cover_image="breeds/akita.png"
+        cover_image="../../../media/breeds/akita.png",
     ),
 ])
-

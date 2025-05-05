@@ -77,8 +77,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dog_db', # mySQL的數據庫名稱
-        'USER':'root', # mySQL的用戶名稱
-        'PASSWORD':'12345', # mySQL的密碼
+        'USER':'Team13', # mySQL的用戶名稱
+        'PASSWORD':'Team13', # mySQL的密碼
         'HOST':'localhost', # mySQL的主機
         'PORT':'3306', # mySQL的固定端口
         'OPTIONS':{
