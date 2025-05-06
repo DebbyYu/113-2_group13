@@ -6,9 +6,7 @@
 
 ## 注意事項
 
-由於使用了React的Javascript框架，需要使用Server開啟
-
-## 本週新增
+Week11的檔案位置如下所示，實作方法於 `Week11.md` 中說明
 
 ```
 📦113-2_group13
