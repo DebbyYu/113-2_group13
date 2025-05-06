@@ -1,0 +1,23 @@
+{% comment %} header.html {% endcomment %}
+{% load static %}
+<div class="Header">
+    <div class='logo'>
+        <img src=".." alt='Logo' class='Logo_img' id='Logo' />
+        <span>狗來坐坐</span>
+    </div>
+    <div class='Lead_line'>
+        <nav>
+            <a href='{% url "header-url" "homepage" %}'>首頁</a> 
+            <a href='{% url "header-url" "aboutus" %}'>關於我們</a>
+            <a href='{% url "header-url" "dog_species" %}'>狗狗圖鑑</a> 
+            <a href='{% url "header-url" "Petaurus" %}'>蜜袋鼯專區</a>
+        </nav>
+        <div class='theme-switch'>
+            <label class='theme-label' for='theme-toggle'>深色模式</label>
+            <input type='checkbox' id='theme-toggle' />
+            <label for='theme-toggle' class='slider'></label>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static "scripts/header.js" %}"></script>
