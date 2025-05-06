@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock  %}</title>
     <link rel="stylesheet" href="{% static "styles/header.css" %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     {% block extrastatic %}{% endblock %}
 
 </head>
@@ -14,6 +15,7 @@
 <body>
     <!-- 固定的 Header -->
     {% include "dogpedia/header.html" %}
+    {% csrf_token %}
     {% block content %}{% endblock content %}
 
 </body>
