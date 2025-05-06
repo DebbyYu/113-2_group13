@@ -8,49 +8,44 @@
 
 由於使用了React的Javascript框架，需要使用Server開啟
 
-## File tree
+## 本週新增
 
 ```
-Week11
- ┣ DogpediaWebsite
- ┃ ┣ dog
- ┃ ┃ ┣ __init__.py
- ┃ ┃ ┣ asgi.py
- ┃ ┃ ┣ settings.py
- ┃ ┃ ┣ urls.py
- ┃ ┃ ┗ wsgi.py
- ┃ ┣ dogpedia
- ┃ ┃ ┣ migrations
- ┃ ┃ ┣ static
- ┃ ┃ ┃ ┣ images
- ┃ ┃ ┃ ┣ scripts
- ┃ ┃ ┃ ┗ styles
- ┃ ┃ ┣ templates
- ┃ ┃ ┃ ┗ dogpedia
- ┃ ┃ ┃ ┃ ┣ Petaurus
- ┃ ┃ ┃ ┃ ┣ Dogpedia.html
- ┃ ┃ ┃ ┃ ┣ Petaurus.html
- ┃ ┃ ┃ ┃ ┣ aboutus.html
- ┃ ┃ ┃ ┃ ┣ base_generic.html
- ┃ ┃ ┃ ┃ ┣ dog_species.html
- ┃ ┃ ┃ ┃ ┣ header.html
- ┃ ┃ ┃ ┃ ┣ homepage.html
- ┃ ┃ ┃ ┃ ┗ sidebar.html
- ┃ ┃ ┣ __init__.py
- ┃ ┃ ┣ admin.py
- ┃ ┃ ┣ apps.py
- ┃ ┃ ┣ models.py
- ┃ ┃ ┣ urls.py
- ┃ ┃ ┗ views.py
- ┃ ┣ media
- ┃ ┃ ┣ breeds
- ┃ ┃ ┣ dogs
- ┃ ┃ ┗ gliders
- ┃ ┗ manage.py
- ┣ dog_db
- ┣ DBscript - 60dogs.txt
- ┣ DBscript - breeds.txt
- ┣ DBscript - dogs.txt
- ┣ Readme.md
- ┗ week11.md
+📦113-2_group13
+ ┣ 📂HW_Report
+ ┃ ┣ 📂Week11
+ ┃ ┃ ┣ 📂DogpediaWebsite
+ ┃ ┃ ┃ ┣ 📂dog
+ ┃ ┃ ┃ ┃ ┣ 📜__init__.py
+ ┃ ┃ ┃ ┃ ┣ 📜asgi.py
+ ┃ ┃ ┃ ┃ ┣ 📜settings.py
+ ┃ ┃ ┃ ┃ ┣ 📜urls.py
+ ┃ ┃ ┃ ┃ ┗ 📜wsgi.py
+ ┃ ┃ ┃ ┣ 📂dogpedia
+ ┃ ┃ ┃ ┃ ┣ 📂migrations
+ ┃ ┃ ┃ ┃ ┣ 📂static
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂images
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂scripts
+ ┃ ┃ ┃ ┃ ┃ ┗ 📂styles
+ ┃ ┃ ┃ ┃ ┣ 📂templates
+ ┃ ┃ ┃ ┃ ┃ ┗ 📂dogpedia
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂Petaurus
+ ┃ ┃ ┃ ┃ ┣ 📜__init__.py
+ ┃ ┃ ┃ ┃ ┣ 📜admin.py
+ ┃ ┃ ┃ ┃ ┣ 📜apps.py
+ ┃ ┃ ┃ ┃ ┣ 📜models.py
+ ┃ ┃ ┃ ┃ ┣ 📜urls.py
+ ┃ ┃ ┃ ┃ ┗ 📜views.py
+ ┃ ┃ ┃ ┣ 📂media
+ ┃ ┃ ┃ ┃ ┣ 📂breeds
+ ┃ ┃ ┃ ┃ ┣ 📂dogs
+ ┃ ┃ ┃ ┃ ┗ 📂gliders
+ ┃ ┃ ┃ ┗ 📜manage.py
+ ┃ ┃ ┣ 📂dog_db
+ ┃ ┃ ┣ 📜DBscript - 60dogs.txt
+ ┃ ┃ ┣ 📜DBscript - breeds.txt
+ ┃ ┃ ┣ 📜DBscript - dogs.txt
+ ┃ ┃ ┗ 📜Readme.md
+ ┃ ┗ 📜Week11.md
+ ┗ 📜Readme.md
 ```
