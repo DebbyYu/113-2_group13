@@ -15,7 +15,7 @@
 
 <div class="card-container">
     {% for breed in dog_breeds %}
-    <div class="card" data-link="{% url "dog_species-url" "dogs" %}" data-breed="Poodle">
+    <div class="card" data-link="{% url "dog_species-url" "dogs" %}" data-breed="{{breed.english_name}}">
         <div class="card-inner">
             <div class="card-front">
                 <img src="{{breed.cover_image}}" alt="貴賓狗">
