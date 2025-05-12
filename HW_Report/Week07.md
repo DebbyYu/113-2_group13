@@ -70,11 +70,23 @@
 
 ### 啟用Docker
 
-1. 從Docker Hub上將Image pull到本機端，網址：[https://hub.docker.com/repository/docker/nqap/django-docker/general](https://hub.docker.com/repository/docker/nqap/django-docker/general)
+1. 使用`docker pull nqap/django-docker`從Docker Hub上將Image pull到本機端，網址：[https://hub.docker.com/repository/docker/nqap/django-docker/general](https://hub.docker.com/repository/docker/nqap/django-docker/general)
 
-2. 使用 `docker compose up --build` 執行，由於我們的db是使用pull下來的Image，需要build的過程中將其pull下來才可以完整運行
+2. 使用 `docker pull python:3.12-slim`將執行環境pull下來，使用slim版本可以節省一些沒有用到的資源
+
+3. 使用`docker pull postgres:17`將所使用的資料庫pull下來
+
+4. 使用`docker compose up --build`執行
+
+5. 於`http://localhost:8000/`即可查看網頁
 
 - 環境變數及設定檔已經附在Image中，經測試後只要用build執行即可使用
+
+### 上一個版本無法執行的問題
+
+1. `docker compose up --build`執行後本身會幫忙pull`python:3.12-slim`及`postgres:17`來執行，但在執行過程中發生`gpg decrypt failed: no pinentry`的狀況
+
+解決方法：先將需要的部份pull完在執行compose
 
 ## 組員分工
 
