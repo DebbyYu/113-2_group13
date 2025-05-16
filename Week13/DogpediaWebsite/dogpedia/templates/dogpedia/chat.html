@@ -1,0 +1,20 @@
+{% extends "dogpedia/base_generic.html" %}
+{% load static %}
+{% block title %}聊天機器人{% endblock  %}
+{% block extrastatic %}
+<link rel="stylesheet" href="{% static "styles/chat.css" %}">
+{% endblock  %}
+
+{% block content %}
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script src="{% static "scripts/chat.js" %}"></script>
+<div id="chat-container">
+    <div id="chat-messages"></div>
+    <div class="input-area">
+        <input id="message-input" type="text" placeholder="輸入訊息...">
+        <button id="send-button">發送</button>
+    </div>
+</div>
+
+
+{% endblock  %}

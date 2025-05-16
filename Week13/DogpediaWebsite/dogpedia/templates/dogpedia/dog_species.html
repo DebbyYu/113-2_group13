@@ -1,0 +1,45 @@
+{% extends "dogpedia/base_generic.html" %}
+{% load static %}
+{% block title %}狗狗介紹網站{% endblock  %}
+{% block extrastatic %}
+<link rel="stylesheet" href="{% static "styles/dog_species.css" %}">
+{% endblock  %}
+
+
+
+{% block content %}
+<div class="dogpedia-header">
+    <h1>🐶 狗狗圖鑑 🐾</h1>
+    <p>探索不同品種的狗狗，了解牠們的特性與生活方式！</p>
+</div>
+
+<div class="card-container">
+    {% for breed in dog_breeds %}
+    <div class="card" data-link="{% url "dog_species-url" "dogs" %}" data-breed="{{breed.english_name}}">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="{{breed.cover_image}}" alt="貴賓狗">
+            </div>
+            <div class="card-back">
+                <h2>{{breed.name}} ({{breed.english_name}})</h2>
+                <div class="description">
+                    <p><strong>家庭生活:</strong> {{breed.family_life}} </p>
+                    <p><strong>身體特徵:</strong> {{breed.body_features}} </p>
+                    <p><strong>社會行為:</strong> {{breed.social_behavior}} </p>
+                    <p><strong>性格:</strong> {{breed.personality}} </p>
+                    <p>點我看更多</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+<script type="text/javascript" src="{% static "scripts/cardlink.js" %}"></script>
+{% endblock %}
+
+
+
+    
+</body>
+
+</html>
