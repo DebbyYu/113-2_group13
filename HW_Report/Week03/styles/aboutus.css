@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 100px;
+    font-family: '微軟正黑體', sans-serif;
+    background-image: url('images/background-dot_720029-2770.jpg');
+    background: linear-gradient(to bottom, #b5a8ff5b, #b689f061);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* 固定 Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgb(255, 255, 255, 0.6);  /* 半透明 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Logo 區塊 */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 選單 */
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: rgb(121, 121, 121);
+}
+
+/* 內文區塊 */
+.content {
+    
+    max-width: 800px; /* 設定最大寬度，避免區塊過寬 */
+    margin: 20px auto; /* 讓內容區塊置中 */
+    padding: 20px;
+    justify-content: center; /* 讓內容區塊置中 */
+    align-items: center;
+    flex-direction: column; /* 讓內容區塊垂直排列 */
+}
+
+/* 內文區塊的各個部分 */
+#about, #members {
+    width: 80%;
+    margin: 20px auto; /* 讓 #about 和 #members 置中 */
+    padding: 20px;
+    background: white; /* 設定背景顏色 */
+    border-radius: 10px; /* 可選的圓角效果 */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1); /* 可選的陰影效果 */
+    border: 5px solid black;  /* 設定外框 5px 粗，黑色 */
+    padding: 10px;  /* 讓內部內容不要太貼近邊框 */
+    display: block;  /* 讓方塊大小適應內容 */
+}
+
+/* 修改表格中名字的連結樣式 */
+a {
+    color: #8e8e8e;  /* 設定名字的顏色 */
+    text-decoration: none;  /* 去掉下劃線 */
+    font-weight: bold;  /* 讓文字加粗 */
+}
+
+a:hover {
+    color: #515151;  /* 當鼠標懸停時，文字顏色變暗 */
+    text-decoration: underline;  /* 鼠標懸停時加上下劃線 */
+}
