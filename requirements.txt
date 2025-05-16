@@ -1,0 +1,9 @@
+django
+djangorestframework
+google-generativeai
+python-socketio
+eventlet
+djangorestframework-simplejwt
+django-filter
+drf-yasg
+cryptography
