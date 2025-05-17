@@ -1,0 +1,63 @@
+{% extends 'dogpedia/base_generic.html' %}
+{% load static %}
+
+{% block title %}上傳我的寵物{% endblock %}
+
+{% block extrastatic %}
+  <link rel="stylesheet" href="{% static 'styles/upload_pet.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="content">
+    <h1>🐕分享你的寵物🐕‍🦺</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div>
+        <label for="name">寵物名字:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div>
+        <label for="breed">品種:</label>
+        <select id="breed" name="breed" required>
+          <option value="" disabled selected>請選擇品種</option>
+          <option value="Poodle">貴賓犬</option>
+          <option value="Chihuahua">吉娃娃</option>
+          <option value="Pomeranian">博美犬</option>
+          <option value="Bichon_Frise">比熊犬</option>
+          <option value="Shiba_Inu">柴犬</option>
+          <option value="Akita_Inu">秋田犬</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="description">狗勾資料:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+      </div>
+
+      <div>
+        <label for="interest">興趣:</label>
+        <textarea id="interest" name="interest" rows="4"></textarea>
+      </div>
+
+      <div>
+        <label for="traits">特色:</label>
+        <textarea id="traits" name="traits" rows="4"></textarea>
+      </div>
+
+      <div>
+        <label for="care_needs">飼養須知:</label>
+        <textarea id="care_needs" name="care_needs" rows="4"></textarea>
+      </div>
+
+      <div>
+        <label for="image">上傳寵物圖片:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <p class="help-text">請上傳您的寵物照片 (PNG 或 JPG 格式)。</p>
+      </div>
+
+      <button type="submit">分享我的寵物</button>
+    </form>
+  </div>
+{% endblock %}

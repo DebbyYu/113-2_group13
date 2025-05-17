@@ -1,0 +1,129 @@
+body {
+    font-family: '微軟正黑體', sans-serif;
+    background: linear-gradient(to bottom, #b5a8ff5b, #b689f061);
+    color: #333;
+}
+
+.dark-mode body {
+    background-color: #222;
+    color: #eee;
+}
+
+/* ======= 頁面主內容區塊 ======= */
+.content {
+    max-width: 800px;
+    margin: 50px auto; /* 調整上邊距以避開可能的頂部導航 */
+    padding: 30px;
+    background-color: #ffe4c4; /* 使用與卡片相似的淺色背景 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .content {
+    background-color: #4a69bd; /* 深色模式下使用深色背景 */
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    color: #6a3311; /* 使用與卡片標題相似的顏色 */
+    margin-bottom: 30px;
+}
+
+.dark-mode h1 {
+    color: #ffd700; /* 深色模式下使用亮色標題 */
+}
+
+/* ======= 表單元素樣式 ======= */
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.dark-mode label {
+    color: #eee;
+}
+
+input[type="text"],
+select,
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.dark-mode input[type="text"],
+.dark-mode select,
+.dark-mode textarea,
+.dark-mode input[type="file"] {
+    background-color: #333;
+    color: #eee;
+    border-color: #555;
+}
+
+textarea {
+    resize: vertical;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    padding-right: 30px;
+}
+
+.help-text {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.dark-mode .help-text {
+    color: #bbb;
+}
+
+/* ======= 提交按鈕樣式 ======= */
+button[type="submit"] {
+    background-color: #5cb85c; /* 使用類似的成功顏色 */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode button[type="submit"] {
+    background-color: #ffd700; /* 深色模式下使用亮色按鈕 */
+    color: #333;
+}
+
+.dark-mode button[type="submit"]:hover {
+    background-color: #e6c200;
+}

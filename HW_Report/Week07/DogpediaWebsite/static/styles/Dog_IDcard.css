@@ -1,0 +1,105 @@
+/* 遮罩層 */
+.overlay {
+    display: none;  /* 預設隱藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* 半透明黑色遮罩 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 讓遮罩在最上層 */
+}
+
+/* 顯示時讓它變成彈出視窗 */
+.overlay.show {
+    display: flex;
+}
+
+/* 彈出視窗 */
+.expanded-card {
+    background: white;
+    width: 80vw;
+    height: 80vh;
+    max-width: 900px; 
+    max-height: 650px; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.dark-mode .expanded-card {
+    background-color: #2c3e50;
+    border: 2px solid white;
+}
+
+/* 關閉按鈕 */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgb(255, 255, 255);
+    color: rgb(168, 167, 167);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.dark-mode .close-btn {
+    background-color: #2c3e50;
+}
+
+.close-btn:hover {
+    background: rgb(199, 107, 207);
+    color: white;
+}
+
+/* 🔹 上方的按鈕區域 */
+.tab-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+/* 🔹 切換按鈕樣式 */
+.tab-btn {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.tab-btn:hover {
+    background: #ddd;
+}
+
+/* 🔹 被選中的按鈕 */
+.tab-btn.active {
+    background: #b700ff;
+    color: white;
+}
+
+.dark-mode .tab-btn.active {
+    background-color: black;
+}
+
+/* 🔹 內容區塊 */
+.tab-content {
+    display: none; /* 預設隱藏 */
+    padding: 10px;
+}
+
+/* 🔹 預設顯示個人資料 */
+.tab-content:first-child {
+    display: block;
+}
