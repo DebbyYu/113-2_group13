@@ -26,4 +26,6 @@ urlpatterns = [
     path('dog_species/<str:dog_id>', views.dog_view, name='dog-url'),
     path('upload_pet/', views.upload_pet_view, name='upload_pet'),
     path('upload_success/', views.upload_success_view, name='upload_success'),
+    path('pet/<int:pet_id>/comments/', views.get_pet_comments_view, name='get_pet_comments'),
+    path('pet/<int:pet_id>/add_comment_ajax/', views.add_pet_comment_ajax_view, name='add_pet_comment_ajax'),
 ]

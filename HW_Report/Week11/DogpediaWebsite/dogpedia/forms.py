@@ -1,5 +1,6 @@
 from django import forms
-from .models import UserPetProfile # 假設你創建了 UserPetProfile 模型
+from .models import UserPetProfile
+from .models import PetComment
 
 class UploadPetForm(forms.ModelForm):
     breed = forms.ChoiceField(
@@ -40,3 +41,11 @@ class UploadPetForm(forms.ModelForm):
     class Meta:
         model = UserPetProfile
         fields = ['name', 'breed', 'description', 'interest', 'traits', 'care_needs', 'image']
+
+class PetCommentForm(forms.ModelForm):
+    class Meta:
+        model = PetComment
+        fields = ['comment_text']
+        widgets = {
+            'comment_text': forms.Textarea(attrs={'rows': 2, 'cols': 50, 'placeholder': '留下你的心情小語...'})
+        }

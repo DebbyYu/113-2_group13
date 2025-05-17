@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from .models import DogBreed, DogProfile, SugarGlider, UserPetProfile # 假設你將創建 UserPetProfile 模型
+from .models import DogBreed, DogProfile, SugarGlider, UserPetProfile, PetComment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .forms import UploadPetForm # 我們還沒創建這個 form，之後會創建
+from .forms import UploadPetForm
+from .forms import PetCommentForm
 from django.conf import settings
 import os
 
@@ -116,3 +118,27 @@ def upload_pet_view(request):
 
 def upload_success_view(request):
     return redirect('homepage')
+
+def get_pet_comments_view(request, pet_id):
+    pet_profile = get_object_or_404(UserPetProfile, pk=pet_id)
+    comments = PetComment.objects.filter(pet_profile=pet_profile).order_by('-created_at')
+    comments_data = serializers.serialize('json', comments, fields=('user__username', 'text', 'created_at'))
+    return JsonResponse({'comments': comments_data})
+
+@login_required
+def add_pet_comment_ajax_view(request, pet_id):
+    pet_profile = get_object_or_404(UserPetProfile, pk=pet_id)
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            comment_text = data.get('text')
+            if comment_text:
+                comment = PetComment(pet_profile=pet_profile, user=request.user, text=comment_text)
+                comment.save()
+                return JsonResponse({'status': 'success', 'message': '評論已發布', 'user': request.user.username, 'text': comment_text, 'created_at': comment.created_at.isoformat()})
+            else:
+                return JsonResponse({'status': 'error', 'message': '評論內容不能為空'}, status=400)
+        except json.JSONDecodeError:
+            return JsonResponse({'status': 'error', 'message': '無效的 JSON'}, status=400)
+    else:
+        return JsonResponse({'status': 'error', 'message': '只接受 POST 請求'}, status=405)
