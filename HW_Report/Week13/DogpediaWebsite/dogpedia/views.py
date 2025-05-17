@@ -85,7 +85,6 @@ def dog_species_view(request, breed=''):
                     profile.traits,
                     profile.care
                 ]
-                # 你可能需要根據你的 DogProfile 模型添加更多欄位
             })
 
         has_next = profiles.has_next()
