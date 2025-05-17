@@ -11,6 +11,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import filters
 from rest_framework import viewsets, permissions
 
+from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 import json
@@ -130,6 +131,29 @@ class LogoutView(APIView):
         "message": "登出時發生錯誤"
       }, status=400)
 
+def register_page(request):
+	return render(request, 'dogpedia/register.html')
+
+@method_decorator(csrf_exempt, name='dispatch')
+class RegisterAPI(APIView):
+	def post(self, request):
+		try:
+			data = request.data
+			username = data.get("username")
+			password = data.get("password")
+
+			if not username or not password:
+				return JsonResponse({"error": "缺少帳號或密碼"}, status=400)
+
+			if User.objects.filter(username=username).exists():
+				return JsonResponse({"error": "帳號已存在"}, status=400)
+
+			User.objects.create_user(username=username, password=password)
+			return JsonResponse({"message": "註冊成功"})
+		except Exception as e:
+			return JsonResponse({"error": str(e)}, status=400)
+
+# 新增狗狗，Debby的東西可以放這
 class AddDogView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -140,19 +164,3 @@ class AddDogView(APIView):
     def post(self, request):
         # 可以從 request.data 中取得表單資料
         return Response({"message": "新增寵物的邏輯"}, status=200)
-
-# @csrf_exempt
-# def register_api(request):
-# 	if request.method == 'POST':
-# 		try:
-# 			data = json.loads(request.body)
-# 			username = data.get('username')
-# 			password = data.get('password')
-
-# 			if User.objects.filter(username=username).exists():
-# 				return JsonResponse({'error': '帳號已存在'}, status=400)
-
-# 			User.objects.create_user(username=username, password=password)
-# 			return JsonResponse({'message': '註冊成功'})
-# 		except Exception as e:
-# 			return JsonResponse({'error': str(e)}, status=400)

@@ -19,11 +19,13 @@ from django.urls import path
 from dogpedia import views
 
 from dogpedia.views import ProtectedView, LogoutView, AddDogView
-# from dogpedia.views import register_api
+
 from rest_framework_simplejwt.views import (
   TokenObtainPairView,
   TokenRefreshView,
 )
+
+from dogpedia.views import register_page, RegisterAPI
 
 urlpatterns = [
     path('', views.index),
@@ -36,7 +38,9 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/logout/', LogoutView.as_view(), name='auth_logout'),
-    path('add-dog/', AddDogView.as_view(), name='add_dog'),
     
-    # path('register-api/', register_api, name='register-api'),
+    path('register/', register_page, name='register-page'),
+    path('api/register/', RegisterAPI.as_view(), name='register-api'),
+    
+    path('add-dog/', AddDogView.as_view(), name='add_dog'),
 ]
