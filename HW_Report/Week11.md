@@ -5,7 +5,7 @@
 1. 下載mysql/mariadb資料庫
 2. 使用 `sudo mysql` 或 `mysql -u root -p` 以root權限開啟mysql/mariadb
 3. 輸入`CREATE DATABASE dog_db;` 新增dog_db database
-4. 輸入`CREATE USER 'Team13'@'localhost' IDENTIFY BY 'Team13';` 來創建一個User叫Team13 密碼是 Team13
+4. 輸入`CREATE USER 'Team13'@'localhost' IDENTIFIED BY 'Team13';` 來創建一個User叫Team13 密碼是 Team13
 5. `GRANT ALL PRIVILEGES ON dog_db.* TO 'Team13'@'localhost';` 讓Team13 可以獲得dog_db的所有權限
 6. 輸入 `exit` 離開資料庫，切換到當前資料夾 `cd 113-2_group13/HW_Report/Week11/DogpediaWebsite` 後執行 `python manage.py migrate` 將Table建立好
 7. 執行`python manage.py shell` 後將 `DBscript` 中的指令複製貼上到shell並執行
