@@ -17,11 +17,11 @@ window.addEventListener("DOMContentLoaded", () => {
 		if (registerBtn) registerBtn.style.display = "inline";
 	}
 
-	if (addDogBtn) {
-		addDogBtn.onclick = () => {
-			window.location.href = "/dogpedia/upload_pet/";
-		};
-	}
+	// if (addDogBtn) {
+	// 	addDogBtn.onclick = () => {
+	// 		window.location.href = "/dogpedia/upload_pet/";
+	// 	};
+	// }
 
 	if (logoutBtn) {
 		logoutBtn.onclick = async () => {

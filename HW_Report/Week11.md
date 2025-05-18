@@ -11,7 +11,7 @@
 7. 執行`python manage.py shell` 後將 `DBscript` 中的指令複製貼上到shell並執行
 8. 開啟另一個cmd，使用 `mysql -u Team13 -p` 並輸入密碼登入mysql/mariadb
 9. 於mariadb中使用`use dog_db`切換到dog_db database
-10. `select dogpedia_dogbreed`可以看到新增的breed種類，`select dogpedia_dogprofile`可以看到新增的狗狗資訊
+10. `select * from dogpedia_dogbreed`可以看到新增的breed種類，`select * from dogpedia_dogprofile`可以看到新增的狗狗資訊
 11. 確認成功新增後回到原本的cmd按 `CTRL+D`離開shell，執行`python manage.py runserver`後於[http://localhost:8000]可以看到網頁結果
 
 ## 本週實作內容

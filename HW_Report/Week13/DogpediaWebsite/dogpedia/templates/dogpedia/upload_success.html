@@ -1,0 +1,15 @@
+{% extends 'dogpedia/base_generic.html' %}
+{% load static %}
+
+{% block title %}上傳我的寵物{% endblock %}
+
+{% block extrastatic %}
+  <link rel="stylesheet" href="{% static 'styles/upload_pet.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="content">
+    <h1>🐕上傳成功！🐕‍🦺</h1>
+    
+  <script type="module" src="{% static "scripts/upload_pet.js" %}"></script>
+{% endblock %}

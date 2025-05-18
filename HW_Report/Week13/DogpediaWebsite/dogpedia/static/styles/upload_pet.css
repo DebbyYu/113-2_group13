@@ -73,6 +73,11 @@ input[type="file"] {
     border-color: #555;
 }
 
+#Upload_pet_user {
+    resize: none;
+    cursor: not-allowed;
+}
+
 textarea {
     resize: vertical;
 }

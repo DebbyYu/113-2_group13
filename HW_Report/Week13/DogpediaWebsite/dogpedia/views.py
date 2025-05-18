@@ -3,12 +3,16 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from .models import DogBreed, DogProfile, SugarGlider, UserPetProfile, PetComment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.urls import reverse
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import serializers
+
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 from rest_framework import filters
 from rest_framework import viewsets, permissions
@@ -51,6 +55,8 @@ def header(request, header_id = ''):
     if header_id == 'dog_species':
         dog_breeds = DogBreed.objects.all().values()
         return render(request, 'dogpedia/' + header_id + '.html', {'dog_breeds': dog_breeds})
+    elif header_id == 'upload_pet':
+        return redirect('/dogpedia/pet/upload_pet/')
     else:
         return render(request, 'dogpedia/' + header_id + '.html', {})
 
@@ -160,6 +166,19 @@ class RegisterAPI(APIView):
 		except Exception as e:
 			return JsonResponse({"error": str(e)}, status=400)
 
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+
+        # Add custom claims
+        token['username'] = user.username
+
+        return token
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
+
 # 新增狗狗，Debby的東西可以放這
 class AddDogView(APIView):
     permission_classes = [IsAuthenticated]
@@ -177,34 +196,43 @@ def upload_pet_view(request):
     if request.method == 'POST':
         form = UploadPetForm(request.POST, request.FILES)
         if form.is_valid():
-            pet = form.save(commit=False)
-            pet.user = request.user
-
+            result = form.save(commit=False)
             breed_name = form.cleaned_data['breed']
+            pet = DogProfile()
+            pet.name = result.name
+            pet.breed = DogBreed.objects.get(english_name=breed_name)
+            pet.profile = result.description
+            pet.interests = result.interest
+            pet.traits = result.traits
+            pet.care = result.care_needs
+            # pet.user = request.user
+            
+
             image = form.cleaned_data['image']
             ext = image.name.split('.')[-1]
             base_filename = f"{breed_name}_"
             counter = 1
             filename = f"{base_filename}{counter}.{ext}"
-            filepath = os.path.join(settings.MEDIA_ROOT, 'dogs', filename)
+            filepath = os.path.join(settings.MEDIA_URL, 'dogs', filename)
 
             while os.path.exists(filepath):
                 counter += 1
                 filename = f"{base_filename}{counter}.{ext}"
-                filepath = os.path.join(settings.MEDIA_ROOT, 'dogs', filename)
+                filepath = os.path.join(settings.MEDIA_URL, 'dogs', filename)
 
-            pet.image.name = os.path.join('dogs', filename) # 設定儲存路徑
+            pet.image = os.path.join(settings.MEDIA_URL, 'dogs', filename) # 設定儲存路徑
             pet.save()
-            return redirect('/upload_success/')
+            return redirect(reverse('upload_success'))
         else:
-            return render(request, 'dogpedia/upload_pet.html', {'form': form})
+            context = {'form': form, 'test': "test"}
+            return render(request, 'dogpedia/upload_pet.html', context)
     else:
         form = UploadPetForm()
-        context = {'form': form}
-        return render(request, 'dogpedia/upload_pet.html', context)
+        context = {'form': form, 'test': 1}
+        return render(request, 'dogpedia/upload_pet.html', context=context)
 
 def upload_success_view(request):
-    return redirect('/homepage/')
+    return render(request, 'dogpedia/upload_success.html', {})
 
 def get_pet_comments_view(request, pet_id):
     pet_profile = get_object_or_404(UserPetProfile, pk=pet_id)

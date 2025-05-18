@@ -39,7 +39,7 @@ class SugarGlider(models.Model):
         return self.name
 
 class UserPetProfile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) # 關聯到上傳的使用者，可選
+    user = models.CharField(max_length=100) # 關聯到上傳的使用者，可選
     name = models.CharField(max_length=100)
     breed = models.CharField(max_length=50, choices=[
         ('Poodle', '貴賓犬'),
