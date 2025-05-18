@@ -1,0 +1,48 @@
+from dogpedia.models import DogBreed, DogProfile
+
+# 先抓出每個品種
+poodle = DogBreed.objects.get(english_name="Poodle")
+chihuahua = DogBreed.objects.get(english_name="Chihuahua")
+pomeranian = DogBreed.objects.get(english_name="Pomeranian")
+bichon = DogBreed.objects.get(english_name="Bichon_Frise")
+shiba = DogBreed.objects.get(english_name="Shiba_Inu")
+akita = DogBreed.objects.get(english_name="Akita_Inu")
+
+# 批量新增 24 隻狗
+DogProfile.objects.bulk_create([
+    # Poodle
+    DogProfile(name="可可", breed=poodle, image="../../../media/dogs/poodle_1.png", profile="活潑黏人，是家中開心果。", interests="接飛盤、聽古典樂。", traits="毛色捲曲，身形小巧。", care="建議每週洗澡與修剪毛髮。"),
+    DogProfile(name="毛球", breed=poodle, image="../../../media/dogs/poodle_2.png", profile="喜歡安靜角落觀察人類。", interests="抱娃娃睡覺。", traits="喜歡乾淨，行為有規律。", care="不喜歡濕冷天氣。"),
+    DogProfile(name="奶油", breed=poodle, image="../../../media/dogs/poodle_3.png", profile="和小孩互動融洽。", interests="玩躲貓貓。", traits="機靈反應快。", care="飲食需注意腸胃敏感。"),
+    DogProfile(name="圓圓", breed=poodle, image="../../../media/dogs/poodle_4.png", profile="適合公寓飼養。", interests="坐推車兜風。", traits="表情豐富。", care="外出需穿衣防寒。"),
+
+    # Chihuahua
+    DogProfile(name="豆豆", breed=chihuahua, image="../../../media/dogs/chihuahua_1.png", profile="喜歡窩在毯子裡。", interests="爬沙發、黏主人。", traits="體型嬌小。", care="注意骨骼脆弱。"),
+    DogProfile(name="米米", breed=chihuahua, image="../../../media/dogs/chihuahua_2.png", profile="需要有耐心訓練。", interests="咬手套、追小球。", traits="好奇又機警。", care="需定期社會化。"),
+    DogProfile(name="豆花", breed=chihuahua, image="../../../media/dogs/chihuahua_3.png", profile="喜歡安靜空間。", interests="曬太陽、看窗外。", traits="胆小但可愛。", care="建議使用胸背帶。"),
+    DogProfile(name="球球", breed=chihuahua, image="../../../media/dogs/chihuahua_4.png", profile="偏好單一飼主。", interests="躲被窩。", traits="警覺性高。", care="避免劇烈運動。"),
+
+    # Pomeranian
+    DogProfile(name="棉棉", breed=pomeranian, image="../../../media/dogs/pomeranian_1.png", profile="喜歡熱鬧、家庭感強。", interests="搖尾巴、撒嬌。", traits="毛量豐富。", care="需常梳毛。"),
+    DogProfile(name="雪球", breed=pomeranian, image="../../../media/dogs/pomeranian_2.png", profile="是家中公主。", interests="坐在窗邊發呆。", traits="外型可愛。", care="容易焦慮需陪伴。"),
+    DogProfile(name="波波", breed=pomeranian, image="../../../media/dogs/pomeranian_3.png", profile="與貓咪也能相處。", interests="跟著人類走來走去。", traits="表情活潑。", care="易胖要控制體重。"),
+    DogProfile(name="嘟嘟", breed=pomeranian, image="../../../media/dogs/pomeranian_4.png", profile="可獨處不吵鬧。", interests="聽音樂入睡。", traits="性格溫馴。", care="保持通風。"),
+
+    # Bichon Frise
+    DogProfile(name="雪寶", breed=bichon, image="../../../media/dogs/bichon_1.png", profile="與孩子互動佳。", interests="咬毛線球。", traits="捲毛白淨。", care="要常洗澡保白毛。"),
+    DogProfile(name="糖糖", breed=bichon, image="../../../media/dogs/bichon_2.png", profile="開朗親人。", interests="和主人撒嬌。", traits="短腿圓圓滾滾。", care="避免過度熱。"),
+    DogProfile(name="白雪", breed=bichon, image="../../../media/dogs/bichon_3.png", profile="喜歡窩腳邊。", interests="聽故事。", traits="柔軟毛髮。", care="毛打結需小心。"),
+    DogProfile(name="QQ", breed=bichon, image="../../../media/dogs/bichon_4.png", profile="安靜乖巧。", interests="追蝴蝶。", traits="圓圓眼神迷人。", care="需留意淚痕清潔。"),
+
+    # Shiba Inu
+    DogProfile(name="阿柴", breed=shiba, image="../../../media/dogs/shiba_1.png", profile="忠誠警戒心強。", interests="在院子裡巡邏。", traits="有笑容感臉部。", care="適合有戶外空間。"),
+    DogProfile(name="柴柴", breed=shiba, image="../../../media/dogs/shiba_2.png", profile="早起作息穩定。", interests="跟球玩。", traits="表情古靈精怪。", care="需要大量運動。"),
+    DogProfile(name="饅頭", breed=shiba, image="../../../media/dogs/shiba_3.png", profile="性格穩重。", interests="看書陪伴。", traits="毛質柔軟濃密。", care="換毛期清理多。"),
+    DogProfile(name="豆柴", breed=shiba, image="../../../media/dogs/shiba_4.png", profile="小型柴犬更適合室內。", interests="跟著人類身影。", traits="體型迷你。", care="注意耳朵清潔。"),
+
+    # Akita Inu
+    DogProfile(name="秋秋", breed=akita, image="../../../media/dogs/akita_1.png", profile="忠心耿耿。", interests="護家警戒。", traits="體格壯碩。", care="需早期訓練。"),
+    DogProfile(name="銀次", breed=akita, image="../../../media/dogs/akita_2.png", profile="親近主人但對外人警戒。", interests="看風景。", traits="外型威嚴。", care="不適合太熱環境。"),
+    DogProfile(name="熊大", breed=akita, image="../../../media/dogs/akita_3.png", profile="慢熟型，需要時間建立信任。", interests="守衛門口。", traits="體型巨大、眼神沉穩。", care="飼主需有經驗。"),
+    DogProfile(name="赤赤", breed=akita, image="../../../media/dogs/akita_4.png", profile="與同伴狗互動良好。", interests="爬山郊遊。", traits="毛色偏紅、帥氣。", care="每日需外出散步。"),
+])
