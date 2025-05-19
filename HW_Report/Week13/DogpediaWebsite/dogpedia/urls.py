@@ -35,7 +35,7 @@ urlpatterns = [
 
     path('pet/upload_pet/', views.upload_pet_view, name='upload_pet'),
     path('pet/upload_success/', views.upload_success_view, name='upload_success'),
-    path('pet/<int:pet_id>/comments/', views.get_pet_comments_view, name='get_pet_comments'),
+    path('pet/comments/dog_id=<int:pet_id>', views.get_pet_comments_view, name='get_pet_comments'),
     path('pet/<int:pet_id>/add_comment_ajax/', views.add_pet_comment_ajax_view, name='add_pet_comment_ajax'),
     
     path('api/protected/', ProtectedView.as_view(), name='protected'),

@@ -91,6 +91,7 @@ def dog_species_view(request, breed=''):
         animals_data = []
         for profile in profiles:
             animals_data.append({
+                'id': profile.id,
                 'name': profile.name,
                 'image_url': str(profile.image),
                 'description': [
@@ -222,10 +223,9 @@ def upload_pet_view(request):
                 filepath = os.path.join(settings.MEDIA_ROOT, 'dogs', filename)
 
             pet.image = '../../../media/dogs/' + filename # 設定儲存路徑
-            initial_path = os.path.join(settings.MEDIA_ROOT, 'dogs', result.image.name)
+            result.image.name = filename
             pet.save()
             result.save()
-            os.rename(initial_path, filepath)
             return redirect(reverse('upload_success'))
         
         else:
@@ -240,10 +240,22 @@ def upload_success_view(request):
     return render(request, 'dogpedia/upload_success.html', {})
 
 def get_pet_comments_view(request, pet_id):
-    pet_profile = get_object_or_404(UserPetProfile, pk=pet_id)
-    comments = PetComment.objects.filter(pet_profile=pet_profile).order_by('-created_at')
-    comments_data = serializers.serialize('json', comments, fields=('user__username', 'text', 'created_at'))
-    return JsonResponse({'comments': comments_data})
+    if request.method == 'GET':
+        pet_profile = DogProfile.objects.get(id=pet_id)
+        comments = PetComment.objects.filter(pet_profile=pet_profile).order_by('-created_at')
+        comments_data = []
+        for comment in comments:
+            comments_data.append({
+                'user': comment.user,
+                'comment_text': comment.comment_text,
+                'created_at': comment.created_at,
+            })
+        if len(comments_data) > 0:
+            return JsonResponse({'comments': comments_data})
+        else:
+            return JsonResponse({'comments': []})
+    else: 
+        return render(request, 'dogpedia/homepage.html', {})
 
 @login_required
 def add_pet_comment_ajax_view(request, pet_id):

@@ -60,7 +60,7 @@ class UserPetProfile(models.Model):
         return self.name
 
 class PetComment(models.Model):
-    pet_profile = models.ForeignKey(UserPetProfile, on_delete=models.CASCADE, related_name='comments')
+    pet_profile = models.ForeignKey(DogProfile, on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment_text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

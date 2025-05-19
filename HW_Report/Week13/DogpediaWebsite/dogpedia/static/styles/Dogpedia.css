@@ -119,6 +119,10 @@ body {
   color: #6a3311;
 }
 
+.id {
+    display:none;
+}
+
 .description {
   display: none;
 }
