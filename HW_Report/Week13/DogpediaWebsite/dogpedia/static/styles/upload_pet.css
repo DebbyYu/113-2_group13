@@ -76,6 +76,7 @@ input[type="file"] {
 #Upload_pet_user {
     resize: none;
     cursor: not-allowed;
+    color:#777;
 }
 
 textarea {

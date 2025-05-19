@@ -5,11 +5,11 @@ from .models import PetComment
 class UploadPetForm(forms.ModelForm):
     class Meta:
         model = UserPetProfile
-        fields = ['name', 'breed', 'description', 'interest', 'traits', 'care_needs', 'image']
-    # user = forms.CharField(
-    #     widget=forms.Textarea(attrs={'rows': 1, 'required': 'required', 'class':'upload_pet_form', 'id':'Upload_pet_user', 'readonly': "readonly"}),
-    #     label='使用者'
-    # )
+        fields = ['user', 'name', 'breed', 'description', 'interest', 'traits', 'care_needs', 'image']
+    user = forms.CharField(
+        widget=forms.Textarea(attrs={'rows': 1, 'required': 'required', 'class':'upload_pet_form', 'id':'Upload_pet_user', 'readonly': "readonly", 'disabled': 'True'}),
+        label='使用者'
+    )
     breed = forms.ChoiceField(
         choices=[
             ('', '請選擇品種'),

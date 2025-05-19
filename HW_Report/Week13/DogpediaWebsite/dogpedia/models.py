@@ -19,7 +19,7 @@ class DogBreed(models.Model):
 class DogProfile(models.Model):
     name = models.CharField(max_length=100)                # 個體名稱 ex. 可可、豆豆
     breed = models.ForeignKey(DogBreed, on_delete=models.CASCADE, related_name='profiles')  # 屬於哪個品種
-    image = models.ImageField(upload_to='dogs/')           # 個體照片（卡片圖片）
+    image = models.ImageField(upload_to='dogs')           # 個體照片（卡片圖片）
     profile = models.TextField()                           # 狗勾資料（基本描述）
     interests = models.TextField()                         # 興趣
     traits = models.TextField()                            # 特色
@@ -39,7 +39,7 @@ class SugarGlider(models.Model):
         return self.name
 
 class UserPetProfile(models.Model):
-    user = models.CharField(max_length=100) # 關聯到上傳的使用者，可選
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) # 關聯到上傳的使用者，可選
     name = models.CharField(max_length=100)
     breed = models.CharField(max_length=50, choices=[
         ('Poodle', '貴賓犬'),
@@ -53,7 +53,7 @@ class UserPetProfile(models.Model):
     interest = models.TextField(blank=True, null=True)
     traits = models.TextField(blank=True, null=True)
     care_needs = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='dogs/')
+    image = models.ImageField(upload_to='dogs')
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

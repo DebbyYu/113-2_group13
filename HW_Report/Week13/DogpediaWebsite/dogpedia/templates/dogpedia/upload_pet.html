@@ -10,7 +10,7 @@
 {% block content %}
   <div class="content">
     <h1>🐕分享你的寵物🐕‍🦺</h1>
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data", id='upload_pet_form'>
         {% csrf_token %}
         {{form}}
       {% comment %} <div>
@@ -57,7 +57,7 @@
         <p class="help-text">請上傳您的寵物照片 (PNG 或 JPG 格式)。</p>
       </div> {% endcomment %}
 
-        <button type="submit">分享我的寵物</button>
+        <button type="submit" id="submit_but">分享我的寵物</button>
     </form>
   </div>
   <script type="module" src="{% static "scripts/upload_pet.js" %}"></script>

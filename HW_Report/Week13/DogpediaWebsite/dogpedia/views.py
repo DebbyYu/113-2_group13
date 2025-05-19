@@ -197,7 +197,8 @@ def upload_pet_view(request):
         form = UploadPetForm(request.POST, request.FILES)
         if form.is_valid():
             result = form.save(commit=False)
-            breed_name = form.cleaned_data['breed']
+            breed_name = form.cleaned_data['breed'].lower()
+            user = form.cleaned_data['user']
             pet = DogProfile()
             pet.name = result.name
             pet.breed = DogBreed.objects.get(english_name=breed_name)
@@ -205,7 +206,7 @@ def upload_pet_view(request):
             pet.interests = result.interest
             pet.traits = result.traits
             pet.care = result.care_needs
-            # pet.user = request.user
+            result.user = User.objects.get(username=user)
             
 
             image = form.cleaned_data['image']
@@ -213,16 +214,20 @@ def upload_pet_view(request):
             base_filename = f"{breed_name}_"
             counter = 1
             filename = f"{base_filename}{counter}.{ext}"
-            filepath = os.path.join(settings.MEDIA_URL, 'dogs', filename)
+            filepath = os.path.join(settings.MEDIA_ROOT, 'dogs', filename)
 
             while os.path.exists(filepath):
                 counter += 1
                 filename = f"{base_filename}{counter}.{ext}"
-                filepath = os.path.join(settings.MEDIA_URL, 'dogs', filename)
+                filepath = os.path.join(settings.MEDIA_ROOT, 'dogs', filename)
 
-            pet.image = os.path.join(settings.MEDIA_URL, 'dogs', filename) # 設定儲存路徑
+            pet.image = '../../../media/dogs/' + filename # 設定儲存路徑
+            initial_path = os.path.join(settings.MEDIA_ROOT, 'dogs', result.image.name)
             pet.save()
+            result.save()
+            os.rename(initial_path, filepath)
             return redirect(reverse('upload_success'))
+        
         else:
             context = {'form': form, 'test': "test"}
             return render(request, 'dogpedia/upload_pet.html', context)
