@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const tabButtons = document.querySelectorAll(".tab-btn");
     const tabContents = document.querySelectorAll(".tab-content");
     const grid = document.getElementById("card-grid");
+    const commentspart = document.getElementById("comments-part");
 
     grid.addEventListener("click", function (event) {
         const card = event.target.closest(".card");
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!commentsContainer) {
             commentsContainer = document.createElement('div');
             commentsContainer.id = commentsContainerId;
-            overlay.appendChild(commentsContainer);
+            commentspart.appendChild(commentsContainer);
         }
         commentsContainer.innerHTML = '<h3>心情小語載入中...</h3>';
 
@@ -50,7 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(res);
             const data = await res.json();
             console.log(data);
-            const comments = JSON.parse(data.comments);
+            console.log(data.comments);
+            comments = data.comments;
+
             displayCommentsData(comments, commentsContainer);
         }
         else{
@@ -69,17 +72,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function displayCommentsData(comments, container) {
-        container.innerHTML = '<h3>心情小語</h3>';
-        if (comments.length > 0) {
+        container.innerHTML = '';
+        if(comments[0].user == -1){
+            container.innerHTML += '<p class="nothing">還沒有任何心情小語。</p>';
+        }
+        else if (comments.length > 0) {
             const ul = document.createElement('ul');
             comments.forEach(comment => {
                 const li = document.createElement('li');
-                li.innerHTML = `<p>${comment.fields.user__username} 說：${comment.fields.text}</p><small>發布於 ${new Date(comment.fields.created_at).toLocaleString()}</small>`;
+                li.innerHTML = `<p>${comment.user} 說：${comment.comment_text}</p><small>發布於 ${new Date(comment.created_at).toLocaleString()}</small>`;
                 ul.appendChild(li);
             });
             container.appendChild(ul);
-        } else {
-            container.innerHTML += '<p>還沒有任何心情小語。</p>';
         }
     }
 
@@ -88,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!commentFormContainer) {
             commentFormContainer = document.createElement('div');
             commentFormContainer.id = 'comment-form-container';
-            overlay.appendChild(commentFormContainer);
+            commentspart.appendChild(commentFormContainer);
         }
         commentFormContainer.innerHTML = `
             <h3>留下你的心情小語</h3>
@@ -99,14 +103,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.submitComment = function(petId) {
         const commentText = document.getElementById('comment-text').value;
-        fetch(`/pet/${petId}/add_comment_ajax/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': getCookie('csrftoken')
-            },
-            body: JSON.stringify({ text: commentText })
-        })
+        var getData = localStorage.getItem('access');
+        // var getDataArr = JSON.parse(getData);
+        const token = String(localStorage.getItem('access'));
+        const userdata = JSON.parse(atob(token.split('.')[1]));
+        const request = new Request(
+            `/dogpedia/pet/add_comment_ajax/dog_id=${petId}`,
+            {
+                method: 'POST',
+                headers: {'X-CSRFToken': getCookie('csrftoken')},
+                mode: 'same-origin', // Do not send CSRF token to another domain.
+                body: JSON.stringify({ user: userdata.username, text: commentText })
+            }
+        );
+        fetch(request)
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {

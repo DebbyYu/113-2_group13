@@ -29,6 +29,8 @@ urlpatterns = [
 urlpatterns += [
     path('dogpedia/', include('dogpedia.urls')),
 ]
+# localhost:8000/dogpedia/pet/upload_pet/
+# /dogpedia/~urls
 
 #Add URL maps to redirect the base URL to our application
 urlpatterns += [

@@ -240,37 +240,43 @@ def upload_success_view(request):
     return render(request, 'dogpedia/upload_success.html', {})
 
 def get_pet_comments_view(request, pet_id):
-    if request.method == 'GET':
+    if request.method == 'POST':
         pet_profile = DogProfile.objects.get(id=pet_id)
         comments = PetComment.objects.filter(pet_profile=pet_profile).order_by('-created_at')
         comments_data = []
         for comment in comments:
             comments_data.append({
-                'user': comment.user,
+                'user': comment.user.username,
                 'comment_text': comment.comment_text,
                 'created_at': comment.created_at,
             })
-        if len(comments_data) > 0:
-            return JsonResponse({'comments': comments_data})
-        else:
-            return JsonResponse({'comments': []})
+
+        if len(comments_data) == 0:
+            comments_data.append({
+                'user': -1,
+                'comment_text': "nothing here",
+                'created_at': 0,
+            })
+        return JsonResponse({'comments': comments_data})
+        
     else: 
         return render(request, 'dogpedia/homepage.html', {})
 
-@login_required
 def add_pet_comment_ajax_view(request, pet_id):
-    pet_profile = get_object_or_404(UserPetProfile, pk=pet_id)
+    pet_profile = DogProfile.objects.get(id=pet_id)
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
+            username = data.get('user')
+            user = User.objects.get(username=username)
             comment_text = data.get('text')
             if comment_text:
-                comment = PetComment(pet_profile=pet_profile, user=request.user, text=comment_text)
+                comment = PetComment(pet_profile=pet_profile, user=user, comment_text=comment_text)
                 comment.save()
-                return JsonResponse({'status': 'success', 'message': '評論已發布', 'user': request.user.username, 'text': comment_text, 'created_at': comment.created_at.isoformat()})
+                return JsonResponse({'status': 'success', 'message': '評論已發布', 'user': username, 'text': comment_text, 'created_at': comment.created_at.isoformat()})
             else:
                 return JsonResponse({'status': 'error', 'message': '評論內容不能為空'}, status=400)
         except json.JSONDecodeError:
             return JsonResponse({'status': 'error', 'message': '無效的 JSON'}, status=400)
-    else:
-        return JsonResponse({'status': 'error', 'message': '只接受 POST 請求'}, status=405)
+    else: 
+        return render(request, 'dogpedia/homepage.html', {})

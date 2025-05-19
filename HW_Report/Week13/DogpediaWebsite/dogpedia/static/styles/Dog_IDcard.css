@@ -35,6 +35,25 @@
     border: 2px solid white;
 }
 
+.comments-part {
+    background: white;
+    margin-left: 10px;
+    padding-top: 40px;
+    width: 80vw;
+    height: 80vh;
+    max-width: 900px; 
+    max-height: 650px; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.dark-mode .comments-part {
+    background-color: #2c3e50;
+    border: 2px solid white;
+}
+
 /* 關閉按鈕 */
 .close-btn {
     position: absolute;
@@ -103,3 +122,15 @@
 .tab-content:first-child {
     display: block;
 }
+
+#comments-container {
+    position:relative;
+    border-color: #777;
+    margin: 4px;
+    height: 45vh;
+}
+
+#comment-form-container {
+    position:relative;
+}
+
