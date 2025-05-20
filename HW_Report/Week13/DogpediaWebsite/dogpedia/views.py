@@ -280,3 +280,7 @@ def add_pet_comment_ajax_view(request, pet_id):
             return JsonResponse({'status': 'error', 'message': '無效的 JSON'}, status=400)
     else: 
         return render(request, 'dogpedia/homepage.html', {})
+    
+#聊天機器人
+def chat_view(request):
+    return render(request, 'dogpedia/chat.html', {})

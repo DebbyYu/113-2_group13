@@ -1,3 +1,9 @@
+* {
+    margin: 0;  /* 邊距 */
+    padding: 0;  /* 內距 */
+    box-sizing: border-box;  /* 設定寬度和高度包含內邊距和邊框，但不包含外邊距 */
+}
+
 body {
 	font-family: 'Segoe UI', sans-serif;
 	background: #f3e6ff; /* 柔和紫色背景 */
@@ -43,7 +49,7 @@ form {
 	align-items: center;
 }
 
-label {
+.login {
 	display: block;
 	margin: 0.6rem 0 0.3rem;
 	font-weight: 500;

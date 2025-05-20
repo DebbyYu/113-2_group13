@@ -32,6 +32,8 @@ urlpatterns = [
     path('Petaurus/<str:Petaurus_id>', views.Petaurus, name='Petaurus-url'),
     path('dog_species/<str:breed>', views.dog_species_view, name='dog_species-url'),
     path('dog_species/<str:dog_id>', views.dog_view, name='dog-url'),
+    
+    path('chat/', views.chat_view, name='chat-url'),
 
     path('pet/upload_pet/', views.upload_pet_view, name='upload_pet'),
     path('pet/upload_success/', views.upload_success_view, name='upload_success'),
