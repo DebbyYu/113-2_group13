@@ -97,8 +97,18 @@ document.addEventListener("DOMContentLoaded", function () {
         commentFormContainer.innerHTML = `
             <h3>留下你的心情小語</h3>
             <textarea id="comment-text" rows="3" cols="50" placeholder="留下你的心情小語..."></textarea>
-            <button type="button" onclick="submitComment('${petId}')">發布</button>
+            <button id ="comment-sub" type="button" onclick="submitComment('${petId}')">發布</button>
         `;
+        const token = localStorage.getItem('access');
+        if (!token){
+            document.getElementById('comment-text').setAttribute("disabled","disabled");
+            document.getElementById('comment-text').setAttribute("placeholder", "登入來發表你的心情小語");
+            document.getElementById('comment-sub').setAttribute("disabled","disabled");
+        }
+        else{
+            document.getElementById('comment-text').removeAttribute("disabled");
+            document.getElementById('comment-sub').removeAttribute("disabled");
+        }
     }
 
     window.submitComment = function(petId) {
@@ -106,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var getData = localStorage.getItem('access');
         // var getDataArr = JSON.parse(getData);
         const token = String(localStorage.getItem('access'));
+        console.log(token);
         const userdata = JSON.parse(atob(token.split('.')[1]));
         const request = new Request(
             `/dogpedia/pet/add_comment_ajax/dog_id=${petId}`,
