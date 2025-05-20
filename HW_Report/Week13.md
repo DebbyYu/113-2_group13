@@ -2,9 +2,11 @@
 
 ## 實作方法
 
-1. 切換到當前資料夾 `cd 113-2_group13/HW_Report/Week13` 後執行 `python socketio_server.py` 將聊天機器人的server架好，我們的機器人server使用port 8001。
-2. `cd DogpediaWebsite` 後執行 `python manage.py runserver localhost:your port number`，注意port避開8001及常用的port number
-3. 登入後才可以新增寵物及於心情小語處留言
+1. GeminiAPI key: [https://drive.google.com/file/d/1aZqvv1BnM_Fnb68sLBNjJej0wepekKOB/view?usp=sharing](https://drive.google.com/file/d/1aZqvv1BnM_Fnb68sLBNjJej0wepekKOB/view?usp=sharing)
+2. 將 GeminiAPI key 輸入到 `socketio_server.py` 的 `Gemini API key` 裡面
+3. 切換到當前資料夾 `cd 113-2_group13/HW_Report/Week13` 後執行 `python socketio_server.py` 將聊天機器人的server架好，我們的機器人server使用port 8001。
+4. `cd DogpediaWebsite` 後執行 `python manage.py runserver localhost:your port number`，注意port避開8001及常用的port number
+5. 登入後才可以新增寵物及於心情小語處留言
 
 ### mysql安裝及基本設定
 
