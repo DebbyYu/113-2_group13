@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<title>註冊｜狗來坐坐</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'styles/header.css' %}">
+	<link rel="stylesheet" href="{% static 'styles/login.css' %}">
+</head>
+<body>
+	{% include "dogpedia/header.html" %}
+
+	<div class="page-title">
+		<h1>📝 使用者註冊｜狗來坐坐</h1>
+	</div>
+
+	<div class="login-container">
+		<form id="register-form">
+			<label for="username" class="login">帳號</label>
+			<input type="text" id="username" placeholder="輸入帳號" required>
+
+			<label for="password" class="login">密碼</label>
+			<input type="password" id="password" placeholder="輸入密碼" required>
+
+			<label for="confirm-password" class="login">確認密碼</label>
+			<input type="password" id="confirm-password" placeholder="再次輸入密碼" required>
+
+			<button type="submit">註冊</button>
+		</form>
+
+		<p id="msg"></p>
+	</div>
+
+	<script src="{% static 'scripts/register.js' %}"></script>
+</body>
+</html>
